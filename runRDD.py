@@ -1,6 +1,12 @@
 import argparse
+import numpy as np
 
 from pyspark import SparkContext
+from pyspark.mllib.regression import LinearRegressionWithSGD
+from pyspark.mllib.regression import LassoWithSGD
+from pyspark.mllib.regression import RidgeRegressionWithSGD
+from pyspark.mllib.regression import LabeledPoint
+
 from datetime import datetime
 
 if __name__ == "__main__":
@@ -64,8 +70,12 @@ if __name__ == "__main__":
     #     the weather event severity ('light','moderate','severe','heavy')
     #     start time of the weather event (datetime)
     #     stop time of the weather event (datetime)
+    #     precipitation in inches (float)
 
     # TODO: At this point, we should be able to drop the scheduled departure time, start time of the weather event, and stop time of the weather event since we were only using those three columns to relate one another and now they are linked
+
+    # Let's convert the RDD to LabeledPoint data types for training
+    departureWeatherRDD = departureWeatherRDD.mapValues(lambda x: LabeledPoint(x[1],np.array([x[6],1.0])))
 
     # Cache it
     departureWeatherRDD = departureWeatherRDD.cache()
@@ -73,3 +83,15 @@ if __name__ == "__main__":
     # Debug print out a few of them
     print("departureWeatherRDD.count() =",departureWeatherRDD.count(),"\n")
     print("departureWeatherRDD.takeSample(False, 5) =\n\n",departureWeatherRDD.takeSample(False, 5),"\n")
+
+    linearRegModel = LinearRegressionWithSGD.train(departureWeatherRDD.values(), iterations=100)
+
+    print(linearRegModel)
+
+    lassoRegModel = LassoWithSGD.train(departureWeatherRDD.values(), iterations=100, regParam=0.001)
+
+    print(lassoRegModel)
+
+    ridgeRegModel = RidgeRegressionWithSGD.train(departureWeatherRDD.values(), iterations=100, regParam=0.001)
+
+    print(ridgeRegModel)
