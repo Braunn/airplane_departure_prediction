@@ -9,3 +9,7 @@ N = 8.3e6
 
 Flight cancelation features:
 year, month, day, day of week, airline, flight number, tail number, origin airport, destination airport, scheduled departure,
+
+Columns in departuree data set:
+Carrier Code,Date (MM/DD/YYYY),Flight Number,Tail Number,Destination Airport,Scheduled departure time,Actual departure time,Scheduled elapsed time (Minutes),Actual elapsed time (Minutes),Departure delay (Minutes),Wheels-off time,Taxi-Out time (Minutes),Delay Carrier (Minutes),Delay Weather (Minutes),Delay National Aviation System (Minutes),Delay Security (Minutes),Delay Late Aircraft Arrival (Minutes)
+AA,01/01/2016,139.0,N029AA,MIA,08:10,08:08,126.0,113.0,-2.0,08:20,12.0,0.0,0.0,0.0,0.0,0.0
