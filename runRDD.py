@@ -14,8 +14,8 @@ if __name__ == "__main__":
     sc.setLogLevel('warn')
 
     print("Command line arguments:")
-    print("--master",args.master)
-    print("--N",args.N)
+    print("\t--master",args.master)
+    print("\t--N",args.N,"\n")
 
     # Read in the airport departure statistics from CSV in to an RDD and split by commas
     departureRDD = sc.textFile("concatenated_data.csv").map(lambda x: x.split(","))
@@ -24,17 +24,14 @@ if __name__ == "__main__":
     departureRDD = departureRDD.map(lambda x: (x[17], (x[1], x[5], float(x[13]))) ).repartition(args.N)
 
     # Combine the date and time in to one string
-    departureRDD = departureRDD.mapValues(lambda x: (x[0] + " " + x[1] + ":01", x[2]) )
+    departureRDD = departureRDD.mapValues(lambda x: (x[0] + " " + x[1], x[2]) )
 
     # Convert that date/time string to a datetime object
-    departureRDD = departureRDD.mapValues(lambda x: (datetime.strptime(x[0], "%m/%d/%Y %H:%M:%S"), x[1]) )
-
-    # Cache it
-    departureRDD = departureRDD.cache()
+    departureRDD = departureRDD.mapValues(lambda x: (datetime.strptime(x[0], "%m/%d/%Y %H:%M"), x[1]) )
 
     # Debug print out a few of them
     print("departureRDD.count() =",departureRDD.count(),"\n")
-    print("departureRDD.takeSample(False, 5) =\n",departureRDD.takeSample(False, 5),"\n")
+    print("departureRDD.takeSample(False, 5) =\n\n",departureRDD.takeSample(False, 5),"\n")
 
     # Read in the weather data from CSV in to an RDD and split by commas
     weatherRDD = sc.textFile("cleaned_weather_data.csv").map(lambda x: x.split(","))
@@ -45,22 +42,34 @@ if __name__ == "__main__":
     # Convert that date/time string to a datetime object
     weatherRDD = weatherRDD.mapValues(lambda x: (x[0], x[1], datetime.strptime(x[2], "%Y-%m-%d %H:%M:%S"), datetime.strptime(x[3], "%Y-%m-%d %H:%M:%S"), x[4]) )
 
-    # Cache it
-    weatherRDD = weatherRDD.cache()
-
     # Debug print out a few of them
     print("weatherRDD.count() =",weatherRDD.count(),"\n")
-    print("weatherRDD.takeSample(False, 5) =\n",weatherRDD.takeSample(False, 5),"\n")
+    print("weatherRDD.takeSample(False, 5) =\n\n",weatherRDD.takeSample(False, 5),"\n")
 
     # Join the two RDDs together
     departureWeatherRDD = departureRDD.join(weatherRDD,args.N)
 
+    # TODO: I think at this point we can unpersist departureRDD and weatherRDD since they won't be used anymore or maybe we don't even need to cache them above?
+
     # Filter down the RDD to entries where scheduled departure time (x[1][0][0]) is between weather start time (x[1][1][2]) and weather stop time (x[1][1][3])
     departureWeatherRDD = departureWeatherRDD.filter(lambda x: x[1][1][2] <= x[1][0][0] and x[1][0][0] <= x[1][1][3])
+
+    # Clean up the value part of the tuple so it's easier to index in to
+    departureWeatherRDD = departureWeatherRDD.mapValues(lambda x: (x[0][0], x[0][1], x[1][0], x[1][1], x[1][2], x[1][3], x[1][4]))
+
+    # Now the RDD consists of key/value pairs where the values are ordered as:
+    #     scheduled departure time (datetime)
+    #     weather delay in minutes (float)
+    #     the weather event category ('rain',etc)
+    #     the weather event severity ('light','moderate','severe','heavy')
+    #     start time of the weather event (datetime)
+    #     stop time of the weather event (datetime)
+
+    # TODO: At this point, we should be able to drop the scheduled departure time, start time of the weather event, and stop time of the weather event since we were only using those three columns to relate one another and now they are linked
 
     # Cache it
     departureWeatherRDD = departureWeatherRDD.cache()
 
     # Debug print out a few of them
     print("departureWeatherRDD.count() =",departureWeatherRDD.count(),"\n")
-    print("departureWeatherRDD.takeSample(False, 5) =\n",departureWeatherRDD.takeSample(False, 5),"\n")
+    print("departureWeatherRDD.takeSample(False, 5) =\n\n",departureWeatherRDD.takeSample(False, 5),"\n")
