@@ -54,7 +54,7 @@ print(datetime.now().strftime("%m/%d/%Y %H:%M:%S"),"- Writing weather data to fi
 
 # Save the cleaned data to a new CSV file
 output_file_path = 'cleaned_weather_data.csv'  # Replace 'cleaned_weather_data.csv' with the desired output file path
-df.to_csv(output_file_path, index=False)
+df.to_csv(output_file_path, index=False, header=False)
 
 print(datetime.now().strftime("%m/%d/%Y %H:%M:%S"),"- Done writing weather data to file")
 
