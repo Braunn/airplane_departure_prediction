@@ -84,14 +84,20 @@ if __name__ == "__main__":
     print("departureWeatherRDD.count() =",departureWeatherRDD.count(),"\n")
     print("departureWeatherRDD.takeSample(False, 5) =\n\n",departureWeatherRDD.takeSample(False, 5),"\n")
 
-    linearRegModel = LinearRegressionWithSGD.train(departureWeatherRDD.values(), iterations=100)
+    # Let's create a training set and test set
+    trainingRDD,testRDD = departureWeatherRDD.randomSplit([0.7,0.3])
+
+    print("trainingRDD.count() = ", trainingRDD.count())
+    print("testRDD.count() = ", testRDD.count())
+
+    linearRegModel = LinearRegressionWithSGD.train(trainingRDD.values(), iterations=100)
 
     print(linearRegModel)
 
-    lassoRegModel = LassoWithSGD.train(departureWeatherRDD.values(), iterations=100, regParam=0.001)
+    lassoRegModel = LassoWithSGD.train(trainingRDD.values(), iterations=100, regParam=0.001)
 
     print(lassoRegModel)
 
-    ridgeRegModel = RidgeRegressionWithSGD.train(departureWeatherRDD.values(), iterations=100, regParam=0.001)
+    ridgeRegModel = RidgeRegressionWithSGD.train(trainingRDD.values(), iterations=100, regParam=0.001)
 
     print(ridgeRegModel)
