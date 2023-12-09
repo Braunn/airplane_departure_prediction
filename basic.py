@@ -18,7 +18,7 @@ result = pd.DataFrame()
 # Put the path to the directory that contains the detailed departure statistics here
 directory = "../"
 
-print(datetime.now().strftime("%d/%m/%Y %H:%M:%S"),"- Concatenating airport departure statistics")
+print(datetime.now().strftime("%m/%d/%Y %H:%M:%S"),"- Concatenating airport departure statistics")
 
 for filename in os.scandir(directory):
     if filename.is_file():
@@ -31,22 +31,30 @@ for filename in os.scandir(directory):
             # Concatenate along rows
             result = pd.concat([result, df], axis=0)
 
-print(datetime.now().strftime("%d/%m/%Y %H:%M:%S"),"- Writing concatenated airport departure statistics to file")
+print(datetime.now().strftime("%m/%d/%Y %H:%M:%S"),"- Writing concatenated airport departure statistics to file")
 
 # Save the concatenated DataFrame to a new CSV file
 result.to_csv('concatenated_data.csv', index=False)
 
-print(datetime.now().strftime("%d/%m/%Y %H:%M:%S"),"- Done writing concatenated airport departure statistics to file")
-
 #WORKING ON THE WEATHER DATA TO MERGE IT
+
+print(datetime.now().strftime("%m/%d/%Y %H:%M:%S"),"- Reading in weather events data")
+
 # Load the data from the CSV file
-file_path = '../WeatherEvents_Jan2016-Dec2022.csv'  # Replace 'your_file_path.csv' with the actual path to your CSV file
+file_path = directory+"WeatherEvents_Jan2016-Dec2022.csv" # Replace 'your_file_path.csv' with the actual path to your CSV file
+
 df = pd.read_csv(file_path)
+
 # Clean the "AirportCode" column by removing the "K"
 df['AirportCode'] = df['AirportCode'].str.replace('K', '')
+
+print(datetime.now().strftime("%m/%d/%Y %H:%M:%S"),"- Writing weather data to file")
+
 # Save the cleaned data to a new CSV file
-output_file_path = 'cleaned_data.csv'  # Replace 'cleaned_data.csv' with the desired output file path
+output_file_path = 'cleaned_weather_data.csv'  # Replace 'cleaned_weather_data.csv' with the desired output file path
 df.to_csv(output_file_path, index=False)
+
+print(datetime.now().strftime("%m/%d/%Y %H:%M:%S"),"- Done writing weather data to file")
 
 #SEPARATE THE DATE AND TIME IN THE STARTTIME AND ENDTIME COLUMNS 
 # Separate the date and time in the "StartTime(UTC)" column
