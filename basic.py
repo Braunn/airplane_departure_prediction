@@ -21,20 +21,22 @@ directory = "../"
 print(datetime.now().strftime("%m/%d/%Y %H:%M:%S"),"- Concatenating airport departure statistics")
 
 for filename in os.scandir(directory):
+    airportCode = filename.name[0:3]
     if filename.is_file():
         filePathStr = filename.path
         if "Detailed_Statistics_Departures" in filePathStr:
-            print(filePathStr)
+            print(datetime.now().strftime("%m/%d/%Y %H:%M:%S"),"- Reading in",filePathStr)
             df = pd.read_csv(filePathStr,skiprows=7)
             # Apply the filter function to each DataFrame
             df = filter_source_rows(df)
+            df['Origin Airport'] = airportCode
             # Concatenate along rows
             result = pd.concat([result, df], axis=0)
 
 print(datetime.now().strftime("%m/%d/%Y %H:%M:%S"),"- Writing concatenated airport departure statistics to file")
 
 # Save the concatenated DataFrame to a new CSV file
-result.to_csv('concatenated_data.csv', index=False)
+result.to_csv('concatenated_data.csv', index=False, header=False)
 
 #WORKING ON THE WEATHER DATA TO MERGE IT
 
