@@ -1,4 +1,6 @@
+import os
 import pandas as pd
+from datetime import datetime
 from sklearn.model_selection import train_test_split, cross_val_score, KFold
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
@@ -6,36 +8,45 @@ from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error
 
-
-# CONCATENATING THE AIRPORTS DATASET 
-# Example for two CSV files, adjust as needed
-df1 = pd.read_csv('/scratch/wozny.c/project/ATL_AA_Detailed_Statistics_Departures.csv',skiprows=7)
-df2 = pd.read_csv('/scratch/wozny.c/project/ATL_AS_Detailed_Statistics_Departures.csv',skiprows=7)
 def filter_source_rows(df):
     return df[~df.apply(lambda row: row.astype(str).str.startswith(' SOURCE')).any(axis=1)]
-# Apply the filter function to each DataFrame
-df1 = filter_source_rows(df1)
-# print(df1)
-df2 = filter_source_rows(df2)
-# print(df2)
-# Concatenate along rows
-result = pd.concat([df1, df2], axis=0)  # Set ignore_index to True for resetting index
-# print( result)
+
+result = pd.DataFrame()
+
+# CONCATENATING THE AIRPORTS DATASET
+
+# Put the path to the directory that contains the detailed departure statistics here
+directory = "../"
+
+print(datetime.now().strftime("%d/%m/%Y %H:%M:%S"),"- Concatenating airport departure statistics")
+
+for filename in os.scandir(directory):
+    if filename.is_file():
+        filePathStr = filename.path
+        if "Detailed_Statistics_Departures" in filePathStr:
+            print(filePathStr)
+            df = pd.read_csv(filePathStr,skiprows=7)
+            # Apply the filter function to each DataFrame
+            df = filter_source_rows(df)
+            # Concatenate along rows
+            result = pd.concat([result, df], axis=0)
+
+print(datetime.now().strftime("%d/%m/%Y %H:%M:%S"),"- Writing concatenated airport departure statistics to file")
+
 # Save the concatenated DataFrame to a new CSV file
 result.to_csv('concatenated_data.csv', index=False)
 
+print(datetime.now().strftime("%d/%m/%Y %H:%M:%S"),"- Done writing concatenated airport departure statistics to file")
+
 #WORKING ON THE WEATHER DATA TO MERGE IT
 # Load the data from the CSV file
-file_path = '/scratch/gandhi.ha/Project/weather_sub.csv'  # Replace 'your_file_path.csv' with the actual path to your CSV file
+file_path = '../WeatherEvents_Jan2016-Dec2022.csv'  # Replace 'your_file_path.csv' with the actual path to your CSV file
 df = pd.read_csv(file_path)
 # Clean the "AirportCode" column by removing the "K"
 df['AirportCode'] = df['AirportCode'].str.replace('K', '')
 # Save the cleaned data to a new CSV file
 output_file_path = 'cleaned_data.csv'  # Replace 'cleaned_data.csv' with the desired output file path
 df.to_csv(output_file_path, index=False)
-# Display the cleaned data
-# print("Cleaned Data:")
-# print(df)
 
 #SEPARATE THE DATE AND TIME IN THE STARTTIME AND ENDTIME COLUMNS 
 # Separate the date and time in the "StartTime(UTC)" column
