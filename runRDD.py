@@ -1,6 +1,8 @@
 from pyspark import SparkContext
 from datetime import datetime
 
+N = 10
+
 sc = SparkContext(appName='Airplane Departure Prediction')
 
 # Read in the airport departure statistics from CSV in to an RDD and split by commas
@@ -16,7 +18,7 @@ departureRDD = departureRDD.mapValues(lambda x: (x[0] + " " + x[1] + ":01", x[2]
 departureRDD = departureRDD.mapValues(lambda x: (datetime.strptime(x[0], "%m/%d/%Y %H:%M:%S"), x[1]) )
 
 # Cache it
-departureRDD = departureRDD.cache()
+departureRDD = departureRDD.repartition(N).cache()
 
 # Debug print out a few of them
 print("departureRDD.count() =",departureRDD.count(),"\n")
@@ -32,14 +34,14 @@ weatherRDD = weatherRDD.map(lambda x: (x[7],(x[1],x[2],x[3],x[4],float(x[5]))))
 weatherRDD = weatherRDD.mapValues(lambda x: (x[0], x[1], datetime.strptime(x[2], "%Y-%m-%d %H:%M:%S"), datetime.strptime(x[3], "%Y-%m-%d %H:%M:%S"), x[4]) )
 
 # Cache it
-weatherRDD = weatherRDD.cache()
+weatherRDD = weatherRDD.repartition(N).cache()
 
 # Debug print out a few of them
 print("weatherRDD.count() =",weatherRDD.count(),"\n")
 print("weatherRDD.takeSample(False, 5) =\n",weatherRDD.takeSample(False, 5),"\n")
 
 # Join the two RDDs together?
-departureWeatherRDD = departureRDD.join(weatherRDD)
+departureWeatherRDD = departureRDD.join(weatherRDD,N).cache()
 
 # Debug print out a few of them
 print("departureWeatherRDD.count() =",departureWeatherRDD.count(),"\n")
