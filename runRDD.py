@@ -9,7 +9,7 @@ sc = SparkContext(appName='Airplane Departure Prediction')
 departureRDD = sc.textFile("concatenated_data.csv").map(lambda x: x.split(","))
 
 # Strip the RDD down to the columns we care about: (origin airport, (scheduled departure date, scheduled departure time, weather delay in minutes))
-departureRDD = departureRDD.map(lambda x: (x[17], (x[1], x[5], float(x[13]))) )
+departureRDD = departureRDD.map(lambda x: (x[17], (x[1], x[5], float(x[13]))) ).repartition(N)
 
 # Combine the date and time in to one string
 departureRDD = departureRDD.mapValues(lambda x: (x[0] + " " + x[1] + ":01", x[2]) )
@@ -18,7 +18,7 @@ departureRDD = departureRDD.mapValues(lambda x: (x[0] + " " + x[1] + ":01", x[2]
 departureRDD = departureRDD.mapValues(lambda x: (datetime.strptime(x[0], "%m/%d/%Y %H:%M:%S"), x[1]) )
 
 # Cache it
-departureRDD = departureRDD.repartition(N).cache()
+departureRDD = departureRDD.cache()
 
 # Debug print out a few of them
 print("departureRDD.count() =",departureRDD.count(),"\n")
@@ -28,13 +28,13 @@ print("departureRDD.takeSample(False, 5) =\n",departureRDD.takeSample(False, 5),
 weatherRDD = sc.textFile("cleaned_weather_data.csv").map(lambda x: x.split(","))
 
 # Strip the RDD down to the columns we care about: (AirportCode,(Type,Severity,StartTime(UTC),EndTime(UTC),Precipitation(in)))
-weatherRDD = weatherRDD.map(lambda x: (x[7],(x[1],x[2],x[3],x[4],float(x[5]))))
+weatherRDD = weatherRDD.map(lambda x: (x[7],(x[1],x[2],x[3],x[4],float(x[5])))).repartition(N)
 
 # Convert that date/time string to a datetime object
 weatherRDD = weatherRDD.mapValues(lambda x: (x[0], x[1], datetime.strptime(x[2], "%Y-%m-%d %H:%M:%S"), datetime.strptime(x[3], "%Y-%m-%d %H:%M:%S"), x[4]) )
 
 # Cache it
-weatherRDD = weatherRDD.repartition(N).cache()
+weatherRDD = weatherRDD.cache()
 
 # Debug print out a few of them
 print("weatherRDD.count() =",weatherRDD.count(),"\n")
