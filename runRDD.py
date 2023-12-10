@@ -74,6 +74,8 @@ if __name__ == "__main__":
     #     stop time of the weather event (datetime)
     #     precipitation in inches (float)
 
+    # TODO: We need to take the weather event category and severity and one hot encode them. We'll also need to artificially add an enumerated value to both of them for "none" in case there were no weather events going on at that time.
+
     # Let's convert the RDD to LabeledPoint data types for training
     departureWeatherRDD = departureWeatherRDD.mapValues(lambda x: LabeledPoint(x[1],np.array([x[6],1.0])))
 
