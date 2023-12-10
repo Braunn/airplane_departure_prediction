@@ -169,7 +169,7 @@ if __name__ == "__main__":
     print("trainingRDD.count() = ", trainingRDD.count())
     print("testRDD.count() = ", testRDD.count())
 
-    linearRegModel = LinearRegressionWithSGD.train(trainingRDD.values(), iterations=10000)
+    linearRegModel = LinearRegressionWithSGD.train(trainingRDD.values(), iterations=args.iter, intercept=True)
 
     print("Linear regression model weights =\n",linearRegModel.weights,"\n")
     print("Linear regression model intercept =",linearRegModel.intercept,"\n")
@@ -186,7 +186,7 @@ if __name__ == "__main__":
     print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
     print("R^2 =",metrics.r2,"\n")
 
-    lassoRegModel = LassoWithSGD.train(trainingRDD.values(), iterations=10000, regParam=0.1)
+    lassoRegModel = LassoWithSGD.train(trainingRDD.values(), iterations=args.iter, regParam=args.regParam, intercept=True)
 
     print("Lasso regression model weights =\n",lassoRegModel.weights,"\n")
     print("Lasso regression model intercept =",lassoRegModel.intercept,"\n")
@@ -203,7 +203,7 @@ if __name__ == "__main__":
     print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
     print("R^2 =",metrics.r2,"\n")
 
-    ridgeRegModel = RidgeRegressionWithSGD.train(trainingRDD.values(), iterations=10000, regParam=0.1)
+    ridgeRegModel = RidgeRegressionWithSGD.train(trainingRDD.values(), iterations=args.iter, regParam=args.regParam, intercept=True)
 
     print("Ridge regression model weights =\n",ridgeRegModel.weights,"\n")
     print("Ridge regression model intercept =",ridgeRegModel.intercept,"\n")
