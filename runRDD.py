@@ -10,6 +10,79 @@ from pyspark.mllib.evaluation import RegressionMetrics
 
 from datetime import datetime
 
+def createFeatureVector(category,severity,precipitation):
+    """ Given a weather event category and severity (both are strings) and a floating point precipitation value,
+        create the binarized feature vector
+
+    Inputs are:
+       - category (string): the weather event category which can be "Cold", "Fog", "Hail", "Precipitation", "Rain", "Snow", "Storm"
+       - severity (string): the weather event severity which can be "Heavy", "Light", "Moderate", "Other", "Severe", "UNK"
+       - precipitation (float): the precipitation in inches
+
+    The return value is
+        - a NumPy array where the indices represent:
+
+         Weather Event Category
+
+         Index 0 = Cold (true/false)
+         Index 1 = Fog (true/false)
+         Index 2 = Hail (true/false)
+         Index 3 = Precipitation (true/false)
+         Index 4 = Rain (true/false)
+         Index 5 = Snow (true/false)
+         Index 6 = Storm (true/false)
+
+         Weather Event Severity
+
+         Index 7 = Light (true/false)
+         Index 8 = Moderate (true/false)
+         Index 9 = Heavy (true/false)
+         Index 10 = Severe (true/false)
+         Index 11 = Other (true/false)
+         Index 12 = Unknown (true/false)
+
+         Miscellaneous
+
+         Index 13 = Precipitation in inches (float)
+    """
+    features = np.zeros(14, dtype=float)
+
+    if category == "Cold":
+        features[0] = 1
+    elif category == "Fog":
+        features[1] = 1
+    elif category == "Hail":
+        features[2] = 1
+    elif category == "Precipitation":
+        features[3] = 1
+    elif category == "Rain":
+        features[4] = 1
+    elif category == "Snow":
+        features[5] = 1
+    elif category == "Storm":
+        features[6] = 1
+    else:
+        print("Got unexpected weather event category:",category)
+
+    if severity == "Light":
+        features[7] = 1
+    elif severity == "Moderate":
+        features[8] = 1
+    elif severity == "Heavy":
+        features[9] = 1
+    elif severity == "Severe":
+        features[10] = 1
+    elif severity == "Other":
+        features[11] = 1
+    elif severity == "UNK":
+        features[12] = 1
+    else:
+        print("Got unexpected weather event severity:",severity)
+
+    features[13] = precipitation
+
+    return features
+
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description = 'Airplane Departure Prediction',formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -77,7 +150,7 @@ if __name__ == "__main__":
     # TODO: We need to take the weather event category and severity and one hot encode them. We'll also need to artificially add an enumerated value to both of them for "none" in case there were no weather events going on at that time.
 
     # Let's convert the RDD to LabeledPoint data types for training
-    departureWeatherRDD = departureWeatherRDD.mapValues(lambda x: LabeledPoint(x[1],np.array([x[6],1.0]))) # TODO: Get rid of this dummy 1.0 I added
+    departureWeatherRDD = departureWeatherRDD.mapValues(lambda x: LabeledPoint(x[1], createFeatureVector(x[2],x[3],x[6])))
 
     # Cache it
     departureWeatherRDD = departureWeatherRDD.cache()
