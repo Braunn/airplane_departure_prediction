@@ -55,8 +55,6 @@ if __name__ == "__main__":
     # Join the two RDDs together
     departureWeatherRDD = departureRDD.join(weatherRDD,args.N)
 
-    # TODO: I think at this point we can unpersist departureRDD and weatherRDD since they won't be used anymore or maybe we don't even need to cache them above?
-
     # Filter down the RDD to entries where scheduled departure time (x[1][0][0]) is between weather start time (x[1][1][2]) and weather stop time (x[1][1][3])
     departureWeatherRDD = departureWeatherRDD.filter(lambda x: x[1][1][2] <= x[1][0][0] and x[1][0][0] <= x[1][1][3])
 
