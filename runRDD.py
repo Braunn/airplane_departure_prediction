@@ -13,9 +13,9 @@ from datetime import datetime
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description = 'Airplane Departure Prediction',formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('--master',default="local[30]",help="Spark Master")
-    parser.add_argument('--N',type=int,default=30,help="Number of partitions to be used in RDDs containing departure and/or weather data.")
-    parser.add_argument('--split',default=0.8,help="Percentage of data to split for training vs test")
+    parser.add_argument('--master', type=str,   default="local[30]", help="Spark Master")
+    parser.add_argument('--N',      type=int,   default=30,          help="Number of partitions to be used in RDDs containing departure and/or weather data.")
+    parser.add_argument('--split',  type=float, default=0.8,         help="Percentage of data to split for training vs test")
     args = parser.parse_args()
 
     sc = SparkContext(args.master, 'Airplane Departure Prediction')
@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
     # Debug print out a few of them
     print("departureRDD.count() =",departureRDD.count(),"\n")
-    print("departureRDD.takeSample(False, 5) =\n\n",departureRDD.takeSample(False, 5),"\n")
+    print("departureRDD.takeSample(False, 5) =\n",departureRDD.takeSample(False, 5),"\n")
 
     # Read in the weather data from CSV in to an RDD and split by commas
     weatherRDD = sc.textFile("cleaned_weather_data.csv").map(lambda x: x.split(","))
@@ -54,7 +54,7 @@ if __name__ == "__main__":
 
     # Debug print out a few of them
     print("weatherRDD.count() =",weatherRDD.count(),"\n")
-    print("weatherRDD.takeSample(False, 5) =\n\n",weatherRDD.takeSample(False, 5),"\n")
+    print("weatherRDD.takeSample(False, 5) =\n",weatherRDD.takeSample(False, 5),"\n")
 
     # Join the two RDDs together
     departureWeatherRDD = departureRDD.join(weatherRDD,args.N)
@@ -84,7 +84,7 @@ if __name__ == "__main__":
 
     # Debug print out a few of them
     print("departureWeatherRDD.count() =",departureWeatherRDD.count(),"\n")
-    print("departureWeatherRDD.takeSample(False, 5) =\n\n",departureWeatherRDD.takeSample(False, 5),"\n")
+    print("departureWeatherRDD.takeSample(False, 5) =\n",departureWeatherRDD.takeSample(False, 5),"\n")
 
     # Let's create a training set and test set
     trainingRDD,testRDD = departureWeatherRDD.randomSplit([args.split,1.0-args.split])
@@ -99,12 +99,12 @@ if __name__ == "__main__":
     # Compute the metrics for the linear regression model using the subset of data we've set aside for testing
     metrics = RegressionMetrics(predictRDD.values())
 
-    print("\n\n*** Metrics for Linear Regression with Stochastic Gradient Descent ***")
+    print("\n*** Metrics for Linear Regression with Stochastic Gradient Descent ***")
     print("Explained Variance =",metrics.explainedVariance)
     print("Mean Absolute Error =",metrics.meanAbsoluteError)
     print("Mean Squared Error =",metrics.meanSquaredError)
     print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
-    print("R^2 =",metrics.r2)
+    print("R^2 =",metrics.r2,"\n")
 
     lassoRegModel = LassoWithSGD.train(trainingRDD.values(), iterations=100, regParam=0.001)
 
@@ -113,12 +113,12 @@ if __name__ == "__main__":
     # Compute the metrics for the lasso regression model using the subset of data we've set aside for testing
     metrics = RegressionMetrics(predictRDD.values())
 
-    print("\n\n*** Metrics for Lasso Regression with Stochastic Gradient Descent ***")
+    print("\n*** Metrics for Lasso Regression with Stochastic Gradient Descent ***")
     print("Explained Variance =",metrics.explainedVariance)
     print("Mean Absolute Error =",metrics.meanAbsoluteError)
     print("Mean Squared Error =",metrics.meanSquaredError)
     print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
-    print("R^2 =",metrics.r2)
+    print("R^2 =",metrics.r2,"\n")
 
     ridgeRegModel = RidgeRegressionWithSGD.train(trainingRDD.values(), iterations=100, regParam=0.001)
 
@@ -127,9 +127,9 @@ if __name__ == "__main__":
     # Compute the metrics for the lasso regression model using the subset of data we've set aside for testing
     metrics = RegressionMetrics(predictRDD.values())
 
-    print("\n\n*** Metrics for Ridge Regression with Stochastic Gradient Descent ***")
+    print("\n*** Metrics for Ridge Regression with Stochastic Gradient Descent ***")
     print("Explained Variance =",metrics.explainedVariance)
     print("Mean Absolute Error =",metrics.meanAbsoluteError)
     print("Mean Squared Error =",metrics.meanSquaredError)
     print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
-    print("R^2 =",metrics.r2)
+    print("R^2 =",metrics.r2,"\n")
