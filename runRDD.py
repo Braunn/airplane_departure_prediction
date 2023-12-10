@@ -201,10 +201,10 @@ if __name__ == "__main__":
 
     # Strip the RDD down to the columns we care about: (origin airport, scheduled departure date, scheduled departure time, weather delay in minutes)
     # Andcombine the date and time in to one string
-    departureRDD = departureRDD.map(lambda x: (x[17], x[1] + " " + x[5] + ":01", float(x[13])))
+    departureRDD = departureRDD.map(lambda x: (x[17], x[1] + " " + x[5], float(x[13])))
 
     # Convert that date/time string to a datetime object
-    departureRDD = departureRDD.map(lambda x: (x[0], datetime.strptime(x[1], "%m/%d/%Y %H:%M:%S"), x[2]) )
+    departureRDD = departureRDD.map(lambda x: (x[0], datetime.strptime(x[1], "%m/%d/%Y %H:%M"), x[2]) )
 
     # Cache, this will be used as the basis for our actual data set 
     # [(index, (origin airport,  datetime, departure delay)), ]
@@ -216,7 +216,6 @@ if __name__ == "__main__":
 
     departureMapping = organizeDeparturesByACYear(departureRDD, N)
     debugPrint(departureMapping, 'departureMapping', 0)
-
 
     # Read in the weather data from CSV in to an RDD and split by commas
     weatherRDD = sc.textFile(weather_file).map(lambda x: x.split(","))
