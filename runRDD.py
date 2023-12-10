@@ -86,9 +86,11 @@ def createFeatureVector(category,severity,precipitation):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description = 'Airplane Departure Prediction',formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('--master', type=str,   default="local[30]", help="Spark Master")
-    parser.add_argument('--N',      type=int,   default=30,          help="Number of partitions to be used in RDDs containing departure and/or weather data.")
-    parser.add_argument('--split',  type=float, default=0.8,         help="Percentage of data to split for training vs test")
+    parser.add_argument('--master',   type=str,   default="local[30]", help="Spark Master")
+    parser.add_argument('--N',        type=int,   default=30,          help="Number of partitions to be used in RDDs containing departure and/or weather data")
+    parser.add_argument('--split',    type=float, default=0.8,         help="Percentage of data to split for training vs test")
+    parser.add_argument('--iter',     type=float, default=10000,       help="Number of iterations to use for training")
+    parser.add_argument('--regParam', type=float, default=0.1,         help="The regularization parameter to use for lasso/ridge regression")
     args = parser.parse_args()
 
     sc = SparkContext(args.master, 'Airplane Departure Prediction')
@@ -98,6 +100,8 @@ if __name__ == "__main__":
     print("\t--master",args.master)
     print("\t--N",args.N)
     print("\t--split",args.split)
+    print("\t--iter",args.iter)
+    print("\t--regParam",args.regParam)
     print("\n")
 
     # Read in the airport departure statistics from CSV in to an RDD and split by commas
@@ -165,7 +169,7 @@ if __name__ == "__main__":
     print("trainingRDD.count() = ", trainingRDD.count())
     print("testRDD.count() = ", testRDD.count())
 
-    linearRegModel = LinearRegressionWithSGD.train(trainingRDD.values(), iterations=100)
+    linearRegModel = LinearRegressionWithSGD.train(trainingRDD.values(), iterations=10000)
 
     predictRDD = testRDD.mapValues(lambda x: (float(linearRegModel.predict(x.features)), float(x.label)) )
 
@@ -179,7 +183,7 @@ if __name__ == "__main__":
     print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
     print("R^2 =",metrics.r2,"\n")
 
-    lassoRegModel = LassoWithSGD.train(trainingRDD.values(), iterations=100, regParam=0.001)
+    lassoRegModel = LassoWithSGD.train(trainingRDD.values(), iterations=10000, regParam=0.1)
 
     predictRDD = testRDD.mapValues(lambda x: (float(lassoRegModel.predict(x.features)), float(x.label)) )
 
@@ -193,7 +197,7 @@ if __name__ == "__main__":
     print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
     print("R^2 =",metrics.r2,"\n")
 
-    ridgeRegModel = RidgeRegressionWithSGD.train(trainingRDD.values(), iterations=100, regParam=0.001)
+    ridgeRegModel = RidgeRegressionWithSGD.train(trainingRDD.values(), iterations=10000, regParam=0.1)
 
     predictRDD = testRDD.mapValues(lambda x: (float(ridgeRegModel.predict(x.features)), float(x.label)) )
 
