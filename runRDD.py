@@ -3,6 +3,9 @@ from datetime import datetime, timedelta
 from os import path
 from bisect import bisect 
 import pdb
+import time
+import tempfile
+import ast
 
 '''
 TODO: fix corner case for mapping weather event with departure that happens across year boundry 
@@ -90,7 +93,7 @@ def matchWeatherToDeparture(weather, departure):
 def getTupleMetadata(atuple):
     inType = type(atuple)
     if inType is list:
-        return f'list-{len(atuple)}'
+        return f'list-len({len(atuple)})'
     elif inType is tuple:
         outStr = '\n\t('
         for index in range(len(tuple)):
@@ -114,7 +117,7 @@ def debugPrint(rdd, name, *args):
         print(f"{name}.takeSample(False, 5) =\n",rdd.takeSample(False, 5),"\n")
     else:
         element = rdd.take(1)
-        metaStr = getTupleMetadata(element) 
+        metaStr = getTupleMetadata(element[0]) 
         print(f"element = {name}.take(1) = {metaStr}")
 
 def swap(pair):
@@ -182,19 +185,58 @@ def joinDepartureWeather(weatherRDD, departureRDD):
     '''
     pass
 
+def saveRDD(rdd, name):
+    '''
+    saves RDDs of key value pairs. The values are saved as strings to be evaluated after loading
+    in the readRDD function. 
+    Input:
+        rdd    = (RDD) of key value pairs 
+        name   = (string) path and name of the folder to save rdd hadoop file to
+    '''
+    output_format_class = "org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat"
+
+    # convert values to strings (use str on datetime to get formated string not object)
+    rdd = rdd.mapValues(lambda Ntuple: Ntuple[:1] + (str(Ntuple[1]),) + Ntuple[2:])\
+                .mapValues(str)
+    
+    # Write a temporary Hadoop file
+    rdd.saveAsNewAPIHadoopFile(name, output_format_class)
+
+def readRDD(sc, name):
+        '''
+        Made to load in a hadoop file created from the writeRDD function.
+        Input:
+            sc = spark context object
+            name = (string) path and name of folder with rdd hadoop save 
+        Output:
+            loaded = (RDD) the RDD saved in the writeRDD function with 
+            values evalauted (it is not longer a string)
+        '''
+        loaded = sc.sequenceFile(name)\
+                     .mapValues(eval)\
+                     .mapValues(lambda Ntuple: Ntuple[:1] + (datetime.strpstr(Ntuple[1], "%Y%m/%d %H:%M:%S"),) + Ntuple[2:])
+        datetime.strptime(x[1], "%m/%d/%Y %H:%M:%S")
+        return loaded
 
 if __name__ == "__main__": 
     #def main(sc):
     sc = SparkContext(appName='Airplane Departure Prediction')
     sc.setLogLevel("ERROR") # Im seeing a ton of info messages without this, I messed up my spark config somehow -NCA
 
-    N = 30 # SET NUM PARTITIONS
+    if 1:
+        N =2 # SET NUM PARTITIONS
+        departure_file = "data/debug/concatenated_data_short.csv" #"concatenated_data.csv"
+        weather_file = "data/debug/cleaned_weather_data_short.csv" #"cleaned_weather_data.csv"
+        name_output = "data_set_short"
+    else:
+        N =30 # SET NUM PARTITIONS
+        departure_file = "data/processed/concatenated_data.csv" #"concatenated_data.csv"
+        weather_file = "data/processed/cleaned_weather_data.csv" #"cleaned_weather_data.csv"
+        name_output = "data_set"
 
-    #departure_file = "data/debug/concatenated_data_short.csv" #"concatenated_data.csv"
-    #weather_file = "data/debug/cleaned_weather_data_short.csv" #"cleaned_weather_data.csv"
-
-    departure_file = "data/processed/concatenated_data.csv" #"concatenated_data.csv"
-    weather_file = "data/processed/cleaned_weather_data.csv" #"cleaned_weather_data.csv"
+    startTime = datetime.now()
+    print(f'Starting runRDD using N={N}, weather data ={weather_file}, and departure data {departure_file}\n')
+    print(f'Start time = {startTime}\n\n')
 
     # Read in the airport departure statistics from CSV in to an RDD and split by commas
     departureRDD = sc.textFile(departure_file).map(lambda x: x.split(","))
@@ -209,14 +251,16 @@ if __name__ == "__main__":
     # Cache, this will be used as the basis for our actual data set 
     # [(index, (origin airport,  datetime, departure delay)), ]
     departureRDD = departureRDD.zipWithIndex().map(swap).cache()
+    prevTime= startTime
+    lapTime = datetime.now()
+    print(f'Departure RDD cached. Elapsed time {lapTime - prevTime}\n\n')
 
     # Debug print out a few of them
     #print("departureRDD.count() =",departureRDD.count(),"\n")
     #print("departureRDD.takeSample(False, 5) =\n",departureRDD.takeSample(False, 5),"\n")
 
     departureMapping = organizeDeparturesByACYear(departureRDD, N)
-    debugPrint(departureMapping, 'departureMapping', 0)
-
+    #debugPrint(departureMapping, 'departureMapping', 0)
 
     # Read in the weather data from CSV in to an RDD and split by commas
     weatherRDD = sc.textFile(weather_file).map(lambda x: x.split(","))
@@ -227,16 +271,26 @@ if __name__ == "__main__":
     # Convert that date/time string to a datetime object
     weatherRDD = weatherRDD.map(lambda x: (x[0], x[1], x[2], datetime.strptime(x[3], "%Y-%m-%d %H:%M:%S"), datetime.strptime(x[4], "%Y-%m-%d %H:%M:%S"), x[5]) )
     weatherRDD = weatherRDD.zipWithIndex().map(swap).cache()
+    prevTime= lapTime
+    lapTime = datetime.now()
+    print(f'Weather RDD cached. Elapsed time { lapTime - prevTime}\n\n')
+
     weatherMapping = organizeWeatherByACYear(weatherRDD, N)
     weatherMapping.cache()
+    prevTime= lapTime
+    lapTime = datetime.now()
+    print(f'Weather mapping cached. Elapsed time { lapTime - prevTime}\n\n')
 
-    debugPrint(weatherRDD, 'weatherRDD')
-    debugPrint(weatherMapping, 'weatherMapping', 0)
+    #debugPrint(weatherRDD, 'weatherRDD')
+    #debugPrint(weatherMapping, 'weatherMapping', 0)
 
     # create the mapping b/w departure and weather event
     mappingRDD = weatherMapping.join(departureMapping, numPartitions = N) # removes keys that are present in weatherMapping and absent in departure mapping 
     mappingRDD = mappingRDD.mapValues(lambda arrayPair: matchWeatherToDeparture(arrayPair[0], arrayPair[1]) )
-    debugPrint(mappingRDD, 'mappingRDD')
+    prevTime= lapTime
+    lapTime = datetime.now()
+    print(f'Mapping created. Elapsed time { lapTime - prevTime}\n\n')
+    #debugPrint(mappingRDD, 'mappingRDD')
 
     # Prep weather RDD for join with departure RDD
     # 1. add departure indexes to weather data, also remove keys in weather data 
@@ -250,14 +304,26 @@ if __name__ == "__main__":
                     .flatMapValues(flatMapHelper)\
                     .map(swap)\
                     .partitionBy(N)
+    prevTime= lapTime
+    lapTime = datetime.now()
+    print(f'Prepped weatherRDD for join. Elapsed time { lapTime - prevTime}\n\n')
     
 
     # Join the two RDDs together
+    print('STARTING LARGE JOIN\n')
     data_set = departureRDD.leftOuterJoin(weatherRDD, numPartitions=N)\
                 .mapValues(featureSelection)\
                 .values()\
                 .cache()
-
+    
     # Debug print out a few of them
     debugPrint(data_set, 'data_set')
+
+    prevTime= lapTime
+    lapTime = datetime.now()
+    print(f'Finished final join! Elapsed time { lapTime - prevTime}\n\n')
+
+    saveRDD(data_set, path.join("data", "processed", name_output))
+    lapTime = datetime.now()
+    print(f'Finished saving runRDD. Total time from {startTime} to {lapTime} is {lapTime - startTime}\n')
     #return data_set, weatherRDD

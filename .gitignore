@@ -1,4 +1,6 @@
 *.asv
 *.csv
 __pycache__
+/processed/data/*
+
 !data/debug/*.csv
