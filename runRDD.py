@@ -6,6 +6,7 @@ from pyspark.mllib.regression import LinearRegressionWithSGD
 from pyspark.mllib.regression import LassoWithSGD
 from pyspark.mllib.regression import RidgeRegressionWithSGD
 from pyspark.mllib.regression import LabeledPoint
+from pyspark.mllib.evaluation import RegressionMetrics
 
 from datetime import datetime
 
@@ -14,6 +15,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = 'Airplane Departure Prediction',formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('--master',default="local[30]",help="Spark Master")
     parser.add_argument('--N',type=int,default=30,help="Number of partitions to be used in RDDs containing departure and/or weather data.")
+    parser.add_argument('--split',default=0.8,help="Percentage of data to split for training vs test")
     args = parser.parse_args()
 
     sc = SparkContext(args.master, 'Airplane Departure Prediction')
@@ -21,7 +23,9 @@ if __name__ == "__main__":
 
     print("Command line arguments:")
     print("\t--master",args.master)
-    print("\t--N",args.N,"\n")
+    print("\t--N",args.N)
+    print("\t--split",args.split)
+    print("\n")
 
     # Read in the airport departure statistics from CSV in to an RDD and split by commas
     departureRDD = sc.textFile("concatenated_data.csv").map(lambda x: x.split(","))
@@ -70,8 +74,6 @@ if __name__ == "__main__":
     #     stop time of the weather event (datetime)
     #     precipitation in inches (float)
 
-    # TODO: At this point, we should be able to drop the scheduled departure time, start time of the weather event, and stop time of the weather event since we were only using those three columns to relate one another and now they are linked
-
     # Let's convert the RDD to LabeledPoint data types for training
     departureWeatherRDD = departureWeatherRDD.mapValues(lambda x: LabeledPoint(x[1],np.array([x[6],1.0])))
 
@@ -83,19 +85,49 @@ if __name__ == "__main__":
     print("departureWeatherRDD.takeSample(False, 5) =\n\n",departureWeatherRDD.takeSample(False, 5),"\n")
 
     # Let's create a training set and test set
-    trainingRDD,testRDD = departureWeatherRDD.randomSplit([0.7,0.3])
+    trainingRDD,testRDD = departureWeatherRDD.randomSplit([args.split,1.0-args.split])
 
     print("trainingRDD.count() = ", trainingRDD.count())
     print("testRDD.count() = ", testRDD.count())
 
     linearRegModel = LinearRegressionWithSGD.train(trainingRDD.values(), iterations=100)
 
-    print(linearRegModel)
+    predictRDD = testRDD.mapValues(lambda x: (float(linearRegModel.predict(x.features)), float(x.label)) )
+
+    # Compute the metrics for the linear regression model using the subset of data we've set aside for testing
+    metrics = RegressionMetrics(predictRDD.values())
+
+    print("\n\n*** Metrics for Linear Regression with Stochastic Gradient Descent ***")
+    print("Explained Variance =",metrics.explainedVariance)
+    print("Mean Absolute Error =",metrics.meanAbsoluteError)
+    print("Mean Squared Error =",metrics.meanSquaredError)
+    print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
+    print("R^2 =",metrics.r2)
 
     lassoRegModel = LassoWithSGD.train(trainingRDD.values(), iterations=100, regParam=0.001)
 
-    print(lassoRegModel)
+    predictRDD = testRDD.mapValues(lambda x: (float(lassoRegModel.predict(x.features)), float(x.label)) )
+
+    # Compute the metrics for the lasso regression model using the subset of data we've set aside for testing
+    metrics = RegressionMetrics(predictRDD.values())
+
+    print("\n\n*** Metrics for Lasso Regression with Stochastic Gradient Descent ***")
+    print("Explained Variance =",metrics.explainedVariance)
+    print("Mean Absolute Error =",metrics.meanAbsoluteError)
+    print("Mean Squared Error =",metrics.meanSquaredError)
+    print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
+    print("R^2 =",metrics.r2)
 
     ridgeRegModel = RidgeRegressionWithSGD.train(trainingRDD.values(), iterations=100, regParam=0.001)
 
-    print(ridgeRegModel)
+    predictRDD = testRDD.mapValues(lambda x: (float(ridgeRegModel.predict(x.features)), float(x.label)) )
+
+    # Compute the metrics for the lasso regression model using the subset of data we've set aside for testing
+    metrics = RegressionMetrics(predictRDD.values())
+
+    print("\n\n*** Metrics for Ridge Regression with Stochastic Gradient Descent ***")
+    print("Explained Variance =",metrics.explainedVariance)
+    print("Mean Absolute Error =",metrics.meanAbsoluteError)
+    print("Mean Squared Error =",metrics.meanSquaredError)
+    print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
+    print("R^2 =",metrics.r2)
