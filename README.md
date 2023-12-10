@@ -11,3 +11,9 @@ conda install sklearn jupyter
 ENVIRONMENT SOURCING 
 run:
 source loadenv
+
+AUTH ISSUES WITH GITHUB
+generating pub key on cluster
+https://stackoverflow.com/questions/19660744/git-push-permission-denied-public-key
+adding to github 
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
