@@ -89,7 +89,7 @@ if __name__ == "__main__":
     parser.add_argument('--master',   type=str,   default="local[30]", help="Spark Master")
     parser.add_argument('--N',        type=int,   default=30,          help="Number of partitions to be used in RDDs containing departure and/or weather data")
     parser.add_argument('--split',    type=float, default=0.8,         help="Percentage of data to split for training vs test")
-    parser.add_argument('--iter',     type=float, default=10000,       help="Number of iterations to use for training")
+    parser.add_argument('--iter',     type=int,   default=10000,       help="Number of iterations to use for training")
     parser.add_argument('--regParam', type=float, default=0.1,         help="The regularization parameter to use for lasso/ridge regression")
     args = parser.parse_args()
 
@@ -171,6 +171,9 @@ if __name__ == "__main__":
 
     linearRegModel = LinearRegressionWithSGD.train(trainingRDD.values(), iterations=10000)
 
+    print("Linear regression model weights =\n",linearRegModel.weights,"\n")
+    print("Linear regression model intercept =",linearRegModel.intercept,"\n")
+
     predictRDD = testRDD.mapValues(lambda x: (float(linearRegModel.predict(x.features)), float(x.label)) )
 
     # Compute the metrics for the linear regression model using the subset of data we've set aside for testing
@@ -185,6 +188,9 @@ if __name__ == "__main__":
 
     lassoRegModel = LassoWithSGD.train(trainingRDD.values(), iterations=10000, regParam=0.1)
 
+    print("Lasso regression model weights =\n",lassoRegModel.weights,"\n")
+    print("Lasso regression model intercept =",lassoRegModel.intercept,"\n")
+
     predictRDD = testRDD.mapValues(lambda x: (float(lassoRegModel.predict(x.features)), float(x.label)) )
 
     # Compute the metrics for the lasso regression model using the subset of data we've set aside for testing
@@ -198,6 +204,9 @@ if __name__ == "__main__":
     print("R^2 =",metrics.r2,"\n")
 
     ridgeRegModel = RidgeRegressionWithSGD.train(trainingRDD.values(), iterations=10000, regParam=0.1)
+
+    print("Ridge regression model weights =\n",ridgeRegModel.weights,"\n")
+    print("Ridge regression model intercept =",ridgeRegModel.intercept,"\n")
 
     predictRDD = testRDD.mapValues(lambda x: (float(ridgeRegModel.predict(x.features)), float(x.label)) )
 
