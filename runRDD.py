@@ -223,7 +223,7 @@ if __name__ == "__main__":
     sc = SparkContext(appName='Airplane Departure Prediction')
     sc.setLogLevel("ERROR") # Im seeing a ton of info messages without this, I messed up my spark config somehow -NCA
     
-    if 1:
+    if 0:
         N =2 # SET NUM PARTITIONS
         departure_file = "data/debug/concatenated_data_short.csv" #"concatenated_data.csv"
         weather_file = "data/debug/cleaned_weather_data_short.csv" #"cleaned_weather_data.csv"
