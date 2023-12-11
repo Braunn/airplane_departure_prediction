@@ -134,7 +134,7 @@ if __name__ == "__main__":
     print("Linear regression model weights =\n",linearRegModel.weights,"\n")
     print("Linear regression model intercept =",linearRegModel.intercept,"\n")
 
-    predictRDD = testRDD.mapValues(lambda x: (float(linearRegModel.predict(x.features)), float(x.label)) )
+    predictRDD = testRDD.map(lambda x: (float(linearRegModel.predict(x.features)), float(x.label)) )
 
     # Compute the metrics for the linear regression model using the subset of data we've set aside for testing
     metrics = RegressionMetrics(predictRDD)
@@ -151,7 +151,7 @@ if __name__ == "__main__":
     print("Lasso regression model weights =\n",lassoRegModel.weights,"\n")
     print("Lasso regression model intercept =",lassoRegModel.intercept,"\n")
 
-    predictRDD = testRDD.mapValues(lambda x: (float(lassoRegModel.predict(x.features)), float(x.label)) )
+    predictRDD = testRDD.map(lambda x: (float(lassoRegModel.predict(x.features)), float(x.label)) )
 
     # Compute the metrics for the lasso regression model using the subset of data we've set aside for testing
     metrics = RegressionMetrics(predictRDD)
@@ -168,7 +168,7 @@ if __name__ == "__main__":
     print("Ridge regression model weights =\n",ridgeRegModel.weights,"\n")
     print("Ridge regression model intercept =",ridgeRegModel.intercept,"\n")
 
-    predictRDD = testRDD.mapValues(lambda x: (float(ridgeRegModel.predict(x.features)), float(x.label)) )
+    predictRDD = testRDD.map(lambda x: (float(ridgeRegModel.predict(x.features)), float(x.label)) )
 
     # Compute the metrics for the lasso regression model using the subset of data we've set aside for testing
     metrics = RegressionMetrics(predictRDD)
