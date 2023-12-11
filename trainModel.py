@@ -63,6 +63,8 @@ def createFeatureVector(category,severity,precipitation):
         features[5] = 1
     elif category == "Storm":
         features[6] = 1
+    elif category == "None":
+        features[13] = 0.0 # Dummy assignment
     else:
         print("Got unexpected weather event category:",category)
 
@@ -78,6 +80,8 @@ def createFeatureVector(category,severity,precipitation):
         features[11] = 1
     elif severity == "UNK":
         features[12] = 1
+    elif severity == "None":
+        features[13] = 0.0 # Dummy assignment
     else:
         print("Got unexpected weather event severity:",severity)
 
