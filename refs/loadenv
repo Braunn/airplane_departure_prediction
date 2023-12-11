@@ -1,0 +1,6 @@
+module load anaconda3/2022.05
+source activate EECE5645_clone
+module load spark/2.4.5-hadoop2.7
+
+#Uncomment this line to run spark in standalone mode 
+#source /scratch/$USER/spark/conf/spark-env.sh
