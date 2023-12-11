@@ -134,6 +134,8 @@ if __name__ == "__main__":
     print("trainingRDD.count() = ", trainingRDD.count())
     print("testRDD.count() = ", testRDD.count())
 
+    print(datetime.now(),"- Training linear regression model with stochastic gradient descent")
+
     linearRegModel = LinearRegressionWithSGD.train(trainingRDD, iterations=args.iter, intercept=True)
 
     print("Linear regression model weights =\n",linearRegModel.weights,"\n")
@@ -150,6 +152,8 @@ if __name__ == "__main__":
     print("Mean Squared Error =",metrics.meanSquaredError)
     print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
     print("R^2 =",metrics.r2,"\n")
+
+    print(datetime.now(),"- Training lasso regression model with stochastic gradient descent")
 
     lassoRegModel = LassoWithSGD.train(trainingRDD, iterations=args.iter, regParam=args.regParam, intercept=True)
 
@@ -168,6 +172,8 @@ if __name__ == "__main__":
     print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
     print("R^2 =",metrics.r2,"\n")
 
+    print(datetime.now(),"- Training ridge regression model with stochastic gradient descent")
+
     ridgeRegModel = RidgeRegressionWithSGD.train(trainingRDD, iterations=args.iter, regParam=args.regParam, intercept=True)
 
     print("Ridge regression model weights =\n",ridgeRegModel.weights,"\n")
@@ -184,3 +190,5 @@ if __name__ == "__main__":
     print("Mean Squared Error =",metrics.meanSquaredError)
     print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
     print("R^2 =",metrics.r2,"\n")
+
+    print(datetime.now(),"- C'est fini")
