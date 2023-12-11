@@ -129,7 +129,7 @@ if __name__ == "__main__":
     print("trainingRDD.count() = ", trainingRDD.count())
     print("testRDD.count() = ", testRDD.count())
 
-    linearRegModel = LinearRegressionWithSGD.train(trainingRDD.values(), iterations=args.iter, intercept=True)
+    linearRegModel = LinearRegressionWithSGD.train(trainingRDD, iterations=args.iter, intercept=True)
 
     print("Linear regression model weights =\n",linearRegModel.weights,"\n")
     print("Linear regression model intercept =",linearRegModel.intercept,"\n")
@@ -137,7 +137,7 @@ if __name__ == "__main__":
     predictRDD = testRDD.mapValues(lambda x: (float(linearRegModel.predict(x.features)), float(x.label)) )
 
     # Compute the metrics for the linear regression model using the subset of data we've set aside for testing
-    metrics = RegressionMetrics(predictRDD.values())
+    metrics = RegressionMetrics(predictRDD)
 
     print("\n*** Metrics for Linear Regression with Stochastic Gradient Descent ***")
     print("Explained Variance =",metrics.explainedVariance)
@@ -146,7 +146,7 @@ if __name__ == "__main__":
     print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
     print("R^2 =",metrics.r2,"\n")
 
-    lassoRegModel = LassoWithSGD.train(trainingRDD.values(), iterations=args.iter, regParam=args.regParam, intercept=True)
+    lassoRegModel = LassoWithSGD.train(trainingRDD, iterations=args.iter, regParam=args.regParam, intercept=True)
 
     print("Lasso regression model weights =\n",lassoRegModel.weights,"\n")
     print("Lasso regression model intercept =",lassoRegModel.intercept,"\n")
@@ -154,7 +154,7 @@ if __name__ == "__main__":
     predictRDD = testRDD.mapValues(lambda x: (float(lassoRegModel.predict(x.features)), float(x.label)) )
 
     # Compute the metrics for the lasso regression model using the subset of data we've set aside for testing
-    metrics = RegressionMetrics(predictRDD.values())
+    metrics = RegressionMetrics(predictRDD)
 
     print("\n*** Metrics for Lasso Regression with Stochastic Gradient Descent ***")
     print("Explained Variance =",metrics.explainedVariance)
@@ -163,7 +163,7 @@ if __name__ == "__main__":
     print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
     print("R^2 =",metrics.r2,"\n")
 
-    ridgeRegModel = RidgeRegressionWithSGD.train(trainingRDD.values(), iterations=args.iter, regParam=args.regParam, intercept=True)
+    ridgeRegModel = RidgeRegressionWithSGD.train(trainingRDD, iterations=args.iter, regParam=args.regParam, intercept=True)
 
     print("Ridge regression model weights =\n",ridgeRegModel.weights,"\n")
     print("Ridge regression model intercept =",ridgeRegModel.intercept,"\n")
@@ -171,7 +171,7 @@ if __name__ == "__main__":
     predictRDD = testRDD.mapValues(lambda x: (float(ridgeRegModel.predict(x.features)), float(x.label)) )
 
     # Compute the metrics for the lasso regression model using the subset of data we've set aside for testing
-    metrics = RegressionMetrics(predictRDD.values())
+    metrics = RegressionMetrics(predictRDD)
 
     print("\n*** Metrics for Ridge Regression with Stochastic Gradient Descent ***")
     print("Explained Variance =",metrics.explainedVariance)
