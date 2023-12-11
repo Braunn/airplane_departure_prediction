@@ -109,8 +109,12 @@ if __name__ == "__main__":
     # Read in the RDD from the filesystem
     departureWeatherRDD = readRDD(sc, "/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_short/")
 
+    # Debug print out a few of them
+    print("departureWeatherRDD.count() =",departureWeatherRDD.count(),"\n")
+    print("departureWeatherRDD.takeSample(False, 5) =\n",departureWeatherRDD.takeSample(False, 5),"\n")
+
     # Let's convert the RDD to LabeledPoint data types for training
-    departureWeatherRDD = departureWeatherRDD.mapValues(lambda x: LabeledPoint(x[1], createFeatureVector(x[2],x[3],x[6])))
+    departureWeatherRDD = departureWeatherRDD.mapValues(lambda x: LabeledPoint(x[0], createFeatureVector(x[1][2],x[1][3],x[1][4])))
 
     # Cache it
     departureWeatherRDD = departureWeatherRDD.cache()
