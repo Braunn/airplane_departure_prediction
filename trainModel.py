@@ -129,6 +129,57 @@ if __name__ == "__main__":
     print("trainingRDD.count() = ", trainingRDD.count())
     print("testRDD.count() = ", testRDD.count())
 
+    linearRegModel = LinearRegressionModel.train(trainingRDD, iterations=args.iter, intercept=True)
+
+    print("Linear regression model weights =\n",linearRegModel.weights,"\n")
+    print("Linear regression model intercept =",linearRegModel.intercept,"\n")
+
+    predictRDD = testRDD.map(lambda x: (float(linearRegModel.predict(x.features)), float(x.label)) )
+
+    # Compute the metrics for the linear regression model using the subset of data we've set aside for testing
+    metrics = RegressionMetrics(predictRDD)
+
+    print("\n*** Metrics for Linear Regression Model ***")
+    print("Explained Variance =",metrics.explainedVariance)
+    print("Mean Absolute Error =",metrics.meanAbsoluteError)
+    print("Mean Squared Error =",metrics.meanSquaredError)
+    print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
+    print("R^2 =",metrics.r2,"\n")
+
+    lassoRegModel = LassoModel.train(trainingRDD, iterations=args.iter, regParam=args.regParam, intercept=True)
+
+    print("Lasso regression model weights =\n",lassoRegModel.weights,"\n")
+    print("Lasso regression model intercept =",lassoRegModel.intercept,"\n")
+
+    predictRDD = testRDD.map(lambda x: (float(lassoRegModel.predict(x.features)), float(x.label)) )
+
+    # Compute the metrics for the lasso regression model using the subset of data we've set aside for testing
+    metrics = RegressionMetrics(predictRDD)
+
+    print("\n*** Metrics for Lasso Regression Model ***")
+    print("Explained Variance =",metrics.explainedVariance)
+    print("Mean Absolute Error =",metrics.meanAbsoluteError)
+    print("Mean Squared Error =",metrics.meanSquaredError)
+    print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
+    print("R^2 =",metrics.r2,"\n")
+
+    ridgeRegModel = RidgeRegressionModel.train(trainingRDD, iterations=args.iter, regParam=args.regParam, intercept=True)
+
+    print("Ridge regression model weights =\n",ridgeRegModel.weights,"\n")
+    print("Ridge regression model intercept =",ridgeRegModel.intercept,"\n")
+
+    predictRDD = testRDD.map(lambda x: (float(ridgeRegModel.predict(x.features)), float(x.label)) )
+
+    # Compute the metrics for the lasso regression model using the subset of data we've set aside for testing
+    metrics = RegressionMetrics(predictRDD)
+
+    print("\n*** Metrics for Ridge Regression Model ***")
+    print("Explained Variance =",metrics.explainedVariance)
+    print("Mean Absolute Error =",metrics.meanAbsoluteError)
+    print("Mean Squared Error =",metrics.meanSquaredError)
+    print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
+    print("R^2 =",metrics.r2,"\n")
+
     linearRegModel = LinearRegressionWithSGD.train(trainingRDD, iterations=args.iter, intercept=True)
 
     print("Linear regression model weights =\n",linearRegModel.weights,"\n")
@@ -139,7 +190,7 @@ if __name__ == "__main__":
     # Compute the metrics for the linear regression model using the subset of data we've set aside for testing
     metrics = RegressionMetrics(predictRDD)
 
-    print("\n*** Metrics for Linear Regression with Stochastic Gradient Descent ***")
+    print("\n*** Metrics for Linear Regression Model with Stochastic Gradient Descent ***")
     print("Explained Variance =",metrics.explainedVariance)
     print("Mean Absolute Error =",metrics.meanAbsoluteError)
     print("Mean Squared Error =",metrics.meanSquaredError)
@@ -156,7 +207,7 @@ if __name__ == "__main__":
     # Compute the metrics for the lasso regression model using the subset of data we've set aside for testing
     metrics = RegressionMetrics(predictRDD)
 
-    print("\n*** Metrics for Lasso Regression with Stochastic Gradient Descent ***")
+    print("\n*** Metrics for Lasso Regression Model with Stochastic Gradient Descent ***")
     print("Explained Variance =",metrics.explainedVariance)
     print("Mean Absolute Error =",metrics.meanAbsoluteError)
     print("Mean Squared Error =",metrics.meanSquaredError)
@@ -173,7 +224,7 @@ if __name__ == "__main__":
     # Compute the metrics for the lasso regression model using the subset of data we've set aside for testing
     metrics = RegressionMetrics(predictRDD)
 
-    print("\n*** Metrics for Ridge Regression with Stochastic Gradient Descent ***")
+    print("\n*** Metrics for Ridge Regression Model with Stochastic Gradient Descent ***")
     print("Explained Variance =",metrics.explainedVariance)
     print("Mean Absolute Error =",metrics.meanAbsoluteError)
     print("Mean Squared Error =",metrics.meanSquaredError)
