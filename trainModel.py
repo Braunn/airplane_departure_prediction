@@ -114,7 +114,7 @@ if __name__ == "__main__":
     print("departureWeatherRDD.takeSample(False, 5) =\n",departureWeatherRDD.takeSample(False, 5),"\n")
 
     # Let's convert the RDD to LabeledPoint data types for training
-    departureWeatherRDD = departureWeatherRDD.mapValues(lambda x: LabeledPoint(x[0], createFeatureVector(x[1][2],x[1][3],x[1][4])))
+    departureWeatherRDD = departureWeatherRDD.map(lambda x: LabeledPoint(x[0], createFeatureVector(x[1][2],x[1][3],x[1][4])))
 
     # Cache it
     departureWeatherRDD = departureWeatherRDD.cache()
