@@ -193,6 +193,7 @@ def saveRDD(rdd, name):
         rdd    = (RDD) of key value pairs 
         name   = (string) path and name of the folder to save rdd hadoop file to
     '''
+    timestamp = datetime.now().strftime('%Y%m%d%H%M%s')
     output_format_class = "org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat"
 
     # convert values to strings (use str on datetime to get formated string not object)
@@ -200,7 +201,7 @@ def saveRDD(rdd, name):
                 .mapValues(str)
     
     # Write a temporary Hadoop file
-    rdd.saveAsNewAPIHadoopFile(name, output_format_class)
+    rdd.saveAsNewAPIHadoopFile(name+'_'+timestamp , output_format_class)
 
 def readRDD(sc, name):
         '''
@@ -214,15 +215,14 @@ def readRDD(sc, name):
         '''
         loaded = sc.sequenceFile(name)\
                      .mapValues(eval)\
-                     .mapValues(lambda Ntuple: Ntuple[:1] + (datetime.strpstr(Ntuple[1], "%Y%m/%d %H:%M:%S"),) + Ntuple[2:])
-        datetime.strptime(x[1], "%m/%d/%Y %H:%M:%S")
+                     .mapValues(lambda Ntuple: Ntuple[:1] + (datetime.strptime(Ntuple[1], "%Y-%m-%d %H:%M:%S"),) + Ntuple[2:])
         return loaded
 
 if __name__ == "__main__": 
     #def main(sc):
     sc = SparkContext(appName='Airplane Departure Prediction')
     sc.setLogLevel("ERROR") # Im seeing a ton of info messages without this, I messed up my spark config somehow -NCA
-
+    
     if 1:
         N =2 # SET NUM PARTITIONS
         departure_file = "data/debug/concatenated_data_short.csv" #"concatenated_data.csv"
@@ -254,7 +254,7 @@ if __name__ == "__main__":
     prevTime= startTime
     lapTime = datetime.now()
     print(f'Departure RDD cached. Elapsed time {lapTime - prevTime}\n\n')
-
+    
     # Debug print out a few of them
     #print("departureRDD.count() =",departureRDD.count(),"\n")
     #print("departureRDD.takeSample(False, 5) =\n",departureRDD.takeSample(False, 5),"\n")
