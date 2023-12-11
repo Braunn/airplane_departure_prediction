@@ -2,6 +2,9 @@ import argparse
 import numpy as np
 
 from pyspark import SparkContext
+from pyspark.mllib.regression import LinearRegressionModel
+from pyspark.mllib.regression import LassoModel
+from pyspark.mllib.regression import RidgeRegressionModel
 from pyspark.mllib.regression import LinearRegressionWithSGD
 from pyspark.mllib.regression import LassoWithSGD
 from pyspark.mllib.regression import RidgeRegressionWithSGD
