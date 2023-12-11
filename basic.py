@@ -17,7 +17,7 @@ if __name__ == "__main__":
     # CONCATENATING THE AIRPORTS DATASET
 
     # Put the path to the directory that contains the detailed departure statistics here
-    directory = "./data/"
+    directory = "./data/raw/"
 
     print(datetime.now().strftime("%m/%d/%Y %H:%M:%S"),"- Concatenating airport departure statistics")
 

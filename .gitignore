@@ -1,5 +1,10 @@
 *.asv
 *.csv
 __pycache__
+<<<<<<< HEAD
 /processed/data/*
+=======
+/data/processed/*
+
+>>>>>>> merge-data
 !data/debug/*.csv

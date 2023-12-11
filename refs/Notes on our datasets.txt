@@ -17,3 +17,6 @@ AA,01/01/2016,139.0,N029AA,MIA,08:10,08:08,126.0,113.0,-2.0,08:20,12.0,0.0,0.0,0
 Columns in the weather data set:
 EventId,Type,Severity,StartTime(UTC),EndTime(UTC),Precipitation(in),TimeZone,AirportCode,LocationLat,LocationLng,City,County,State,ZipCode
 W-1,Snow,Light,2016-01-06 23:14:00,2016-01-07 00:34:00,0.0,US/Mountain,K04V,38.0972,-106.1689,Saguache,Saguache,CO,81149
+
+Airline code look up (split up into separate pages grouped alphabetically)
+https://en.wikipedia.org/wiki/Airline_codes
