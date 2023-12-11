@@ -93,6 +93,7 @@ if __name__ == "__main__":
     parser.add_argument('--split',    type=float, default=0.8,         help="Percentage of data to split for training vs test")
     parser.add_argument('--iter',     type=int,   default=10000,       help="Number of iterations to use for training")
     parser.add_argument('--regParam', type=float, default=0.1,         help="The regularization parameter to use for lasso/ridge regression")
+    parser.add_argument('--data_set', type=str,   help="Path to the data set")
     args = parser.parse_args()
 
     sc = SparkContext(args.master, 'Airplane Departure Prediction')
@@ -107,7 +108,7 @@ if __name__ == "__main__":
     print("\n")
 
     # Read in the RDD from the filesystem
-    departureWeatherRDD = readRDD(sc, "/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_short/")
+    departureWeatherRDD = readRDD(sc, args.data_set)
 
     # Debug print out a few of them
     print("departureWeatherRDD.count() =",departureWeatherRDD.count(),"\n")
