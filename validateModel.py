@@ -125,7 +125,7 @@ if __name__ == "__main__":
 
     # User can specify that only a percentage of the total data is used
     if 0 < args.subset and args.subset < 1.0:
-        print(datetime.now(),"Randomly sampling down to",args.subset*100,"% of total data set")
+        print(f"{datetime.now()} - Decimating data set down to {args.subset*100}%")
         trainRDD = trainRDD.sample(False, args.subset)
 
     # Let's convert the RDD to LabeledPoint data types for training
