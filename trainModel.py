@@ -12,6 +12,21 @@ from datetime import datetime
 
 from runRDD import readRDD
 
+def printRegressionMetrics(predictRDD, do_tab=0):
+    metrics = RegressionMetrics(predictRDD)
+
+    if do_tab:
+        leading_str = '\t'
+    else:
+        leading_str = ''
+
+    print(f"{leading_str}Explained Variance =",metrics.explainedVariance)
+    print(f"{leading_str}Mean Absolute Error =",metrics.meanAbsoluteError)
+    print(f"{leading_str}Mean Squared Error =",metrics.meanSquaredError)
+    print(f"{leading_str}Root Mean Squared Error =",metrics.rootMeanSquaredError)
+    print(f"{leading_str}R^2 =",metrics.r2,"\n")
+
+
 def createFeatureVector(category,severity,precipitation):
     """ Given a weather event category and severity (both are strings) and a floating point precipitation value,
         create the binarized feature vector
@@ -141,14 +156,8 @@ if __name__ == "__main__":
     predictRDD = testRDD.map(lambda x: (float(linearRegModel.predict(x.features)), float(x.label)) )
 
     # Compute the metrics for the linear regression model using the subset of data we've set aside for testing
-    metrics = RegressionMetrics(predictRDD)
-
     print("\n*** Metrics for Linear Regression Model with Stochastic Gradient Descent ***")
-    print("Explained Variance =",metrics.explainedVariance)
-    print("Mean Absolute Error =",metrics.meanAbsoluteError)
-    print("Mean Squared Error =",metrics.meanSquaredError)
-    print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
-    print("R^2 =",metrics.r2,"\n")
+    printRegressionMetrics(predictRDD)
 
     print(datetime.now(),"- Training lasso regression model with stochastic gradient descent")
 
@@ -160,14 +169,8 @@ if __name__ == "__main__":
     predictRDD = testRDD.map(lambda x: (float(lassoRegModel.predict(x.features)), float(x.label)) )
 
     # Compute the metrics for the lasso regression model using the subset of data we've set aside for testing
-    metrics = RegressionMetrics(predictRDD)
-
     print("\n*** Metrics for Lasso Regression Model with Stochastic Gradient Descent ***")
-    print("Explained Variance =",metrics.explainedVariance)
-    print("Mean Absolute Error =",metrics.meanAbsoluteError)
-    print("Mean Squared Error =",metrics.meanSquaredError)
-    print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
-    print("R^2 =",metrics.r2,"\n")
+    printRegressionMetrics(predictRDD)
 
     print(datetime.now(),"- Training ridge regression model with stochastic gradient descent")
 
@@ -178,14 +181,8 @@ if __name__ == "__main__":
 
     predictRDD = testRDD.map(lambda x: (float(ridgeRegModel.predict(x.features)), float(x.label)) )
 
-    # Compute the metrics for the lasso regression model using the subset of data we've set aside for testing
-    metrics = RegressionMetrics(predictRDD)
-
+    # Compute the metrics for the ridge regression model using the subset of data we've set aside for testing
     print("\n*** Metrics for Ridge Regression Model with Stochastic Gradient Descent ***")
-    print("Explained Variance =",metrics.explainedVariance)
-    print("Mean Absolute Error =",metrics.meanAbsoluteError)
-    print("Mean Squared Error =",metrics.meanSquaredError)
-    print("Root Mean Squared Error =",metrics.rootMeanSquaredError)
-    print("R^2 =",metrics.r2,"\n")
+    printRegressionMetrics(predictRDD)
 
     print(datetime.now(),"- C'est fini")
