@@ -87,7 +87,7 @@ def crossValidation(trainRDD, folds, model_name, iter, intercept, reg=0, seed=-1
         # print timing information 
         print(f'End of fold {k}\n')
         print(f'Duration of fold iteration {datetime.now() - foldStartTime}')
-        print(f'Duration of fold iteration {datetime.now() - startTime}\n\n')
+        print(f'Total duration of cross-validation thus far {datetime.now() - startTime}\n\n')
 
 
 if __name__ == "__main__":
