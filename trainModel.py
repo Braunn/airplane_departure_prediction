@@ -116,7 +116,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     sc = SparkContext(args.master, 'Airplane Departure Prediction')
-    sc.setLogLevel('warn')
+    sc.setLogLevel('ERROR')
 
     print("Command line arguments:")
     print("\t--master",args.master)
