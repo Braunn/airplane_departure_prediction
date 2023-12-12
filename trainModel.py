@@ -112,6 +112,7 @@ if __name__ == "__main__":
     parser.add_argument('--split',    type=float, default=0.8,         help="Percentage of data to split for training vs test")
     parser.add_argument('--iter',     type=int,   default=10000,       help="Number of iterations to use for training")
     parser.add_argument('--regParam', type=float, default=0.1,         help="The regularization parameter to use for lasso/ridge regression")
+    parser.add_argument('--subset',   type=float, default=1.0,         help="Percentage of data to use (for testing purposes only)")
     parser.add_argument('--data_set', type=str,   help="Path to the data set")
     args = parser.parse_args()
 
@@ -124,10 +125,17 @@ if __name__ == "__main__":
     print("\t--split",args.split)
     print("\t--iter",args.iter)
     print("\t--regParam",args.regParam)
+    print("\t--subset",args.subset)
+    print("\t--data_set",args.data_set)
     print("\n")
 
     # Read in the RDD from the filesystem
     departureWeatherRDD = readRDD(sc, args.data_set)
+
+    # User can specify that only a percentage of the total data is used
+    if 0 < args.subset and args.subset < 1.0:
+        print(datetime.now(),"Randomly sampling down to",args.subset*100,"% of total data set") 
+        departureWeatherRDD = departureWeatherRDD.sample(False, args.subset)
 
     # Debug print out a few of them
     print("departureWeatherRDD.count() =",departureWeatherRDD.count(),"\n")

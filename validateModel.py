@@ -99,8 +99,9 @@ if __name__ == "__main__":
     parser.add_argument('--data_set', type=str,                                         help="Path to the data set")
     parser.add_argument('--K',        type=int,   default=4,                            help="Number of folds in k-fold cross validation")
     parser.add_argument('--type',     choices=['LIN_REG', 'LASSO_REG', 'RIDGE_REG'],    help='Type of model for validating. All models train using SGD') 
-    parser.add_argument('--seed',     type=int, default=-1,                           help="Random seed used to shuffle the data set (-1 will use a randomly generated seed based on time)")
+    parser.add_argument('--seed',     type=int,   default=-1,                           help="Random seed used to shuffle the data set (-1 will use a randomly generated seed based on time)")
     parser.add_argument('--intercept',type=bool,  default=True,                         help="Flag to add bias term in features")
+    parser.add_argument('--subset',   type=float, default=1.0,                          help="Percentage of data to randomly sample from file (for testing purposes only)")
     args = parser.parse_args()
 
     sc = SparkContext(args.master, 'Model Validation Airplane Departure Prediction')
@@ -116,10 +117,16 @@ if __name__ == "__main__":
     print("\t--type",args.type)
     print("\t--seed",args.seed)
     print("\t--intercept",args.intercept)
+    print("\t--subset",args.subset)
     print("\n")
 
     # Read in the RDD from the filesystem
     trainRDD = readRDD(sc, args.data_set)
+
+    # User can specify that only a percentage of the total data is used
+    if 0 < args.subset and args.subset < 1.0:
+        print(datetime.now(),"Randomly sampling down to",args.subset*100,"% of total data set")
+        trainRDD = trainRDD.sample(False, args.subset)
 
     # Let's convert the RDD to LabeledPoint data types for training
     trainRDD = trainRDD.map(lambda x: LabeledPoint(x[0], createFeatureVector(x[1][2],x[1][3],x[1][4]))).cache()
