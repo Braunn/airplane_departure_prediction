@@ -122,7 +122,7 @@ if __name__ == "__main__":
     trainRDD = readRDD(sc, args.data_set)
 
     # Let's convert the RDD to LabeledPoint data types for training
-    trainRDD = trainRDD.map(lambda x: LabeledPoint(x[0], createFeatureVector(x[1][2],x[1][3],x[1][4])))
+    trainRDD = trainRDD.map(lambda x: LabeledPoint(x[0], createFeatureVector(x[1][2],x[1][3],x[1][4]))).cache()
 
     # Debug print out a few of them
     print("departureWeatherRDD.count() =",trainRDD.count(),"\n")
