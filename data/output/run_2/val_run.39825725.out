@@ -1,0 +1,361 @@
+/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set
+Command line arguments:
+	--master local[30]
+	--N 30
+	--iter 10000
+	--regParam 0.1
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 8589276 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.3]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0])] 
+
+2023-12-12 08:51:10.477896 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 8589276, start index 0, stop index: 2147319.0
+Results for fold = 0 training using LASSO_REG
+
+	Explained Variance = 0.007763778840060624
+	Mean Absolute Error = 1.0744098040418477
+	Mean Squared Error = 111.64488129635549
+	Root Mean Squared Error = 10.566214142083034
+	R^2 = -6.95447808771732e-05 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.4991739777212679 
+
+End of fold 0
+
+Duration of fold iteration 0:17:40.471195
+Duration of fold iteration 0:17:40.471311
+
+
+Starting fold 1
+Count = 8589276, start index 2147319.0, stop index: 4294638.0
+Results for fold = 1 training using LASSO_REG
+
+	Explained Variance = 0.012153075286840308
+	Mean Absolute Error = 1.0855184983098851
+	Mean Squared Error = 124.6490564262307
+	Root Mean Squared Error = 11.164634182373854
+	R^2 = -9.750783985418288e-05 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.49364180791674805 
+
+End of fold 1
+
+Duration of fold iteration 0:17:40.080769
+Duration of fold iteration 0:35:20.552098
+
+
+Starting fold 2
+Count = 8589276, start index 4294638.0, stop index: 6441957.0
+Results for fold = 2 training using LASSO_REG
+
+	Explained Variance = 0.009002650951638396
+	Mean Absolute Error = 1.0778157344023775
+	Mean Squared Error = 117.40673853733585
+	Root Mean Squared Error = 10.835439009903377
+	R^2 = -7.66850473556957e-05 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.49748147961867006 
+
+End of fold 2
+
+Duration of fold iteration 0:17:12.122384
+Duration of fold iteration 0:52:32.674501
+
+
+Starting fold 3
+Count = 8589276, start index 6441957.0, stop index: 8589276.0
+Results for fold = 3 training using LASSO_REG
+
+	Explained Variance = 0.011398637971488733
+	Mean Absolute Error = 1.0838364459483405
+	Mean Squared Error = 120.18064938615001
+	Root Mean Squared Error = 10.962693527876715
+	R^2 = -9.485486437776913e-05 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.49451095373655074 
+
+End of fold 3
+
+Duration of fold iteration 0:16:37.950356
+Duration of fold iteration 1:09:10.624876
+
+
+2023-12-12 10:01:09.037810 - C'est fini
+Command line arguments:
+	--master local[30]
+	--N 30
+	--iter 10000
+	--regParam 1.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 8589276 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.19]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0])] 
+
+2023-12-12 10:09:00.138622 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 8589276, start index 0, stop index: 2147319.0
+Results for fold = 0 training using LASSO_REG
+
+	Explained Variance = 0.34490518152256217
+	Mean Absolute Error = 0.5872862858289802
+	Mean Squared Error = 111.9820226990028
+	Root Mean Squared Error = 10.582155862535894
+	R^2 = -0.0030895206647449935 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 0
+
+Duration of fold iteration 0:17:17.667436
+Duration of fold iteration 0:17:17.667557
+
+
+Starting fold 1
+Count = 8589276, start index 2147319.0, stop index: 4294638.0
+Results for fold = 1 training using LASSO_REG
+
+	Explained Variance = 0.3646744303914567
+	Mean Absolute Error = 0.6038827952437434
+	Mean Squared Error = 125.00157778141022
+	Root Mean Squared Error = 11.180410447806029
+	R^2 = -0.0029258945030457006 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 1
+
+Duration of fold iteration 0:17:02.984326
+Duration of fold iteration 0:34:20.651903
+
+
+Starting fold 2
+Count = 8589276, start index 4294638.0, stop index: 6441957.0
+Results for fold = 2 training using LASSO_REG
+
+	Explained Variance = 0.35089484801843274
+	Mean Absolute Error = 0.5923637801369988
+	Mean Squared Error = 117.74863073441813
+	Root Mean Squared Error = 10.851204114494305
+	R^2 = -0.0029889405052727636 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 2
+
+Duration of fold iteration 0:17:16.842559
+Duration of fold iteration 0:51:37.494479
+
+
+Starting fold 3
+Count = 8589276, start index 6441957.0, stop index: 8589276.0
+Results for fold = 3 training using LASSO_REG
+
+	Explained Variance = 0.3615320558780579
+	Mean Absolute Error = 0.6012753577833568
+	Mean Squared Error = 120.53078280404542
+	Root Mean Squared Error = 10.978651228818839
+	R^2 = -0.0030085238413872784 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 3
+
+Duration of fold iteration 0:16:17.814738
+Duration of fold iteration 1:07:55.309235
+
+
+2023-12-12 11:17:42.868558 - C'est fini
+Command line arguments:
+	--master local[30]
+	--N 30
+	--iter 10000
+	--regParam 100.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 8589276 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0])] 
+
+2023-12-12 11:25:16.108430 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 8589276, start index 0, stop index: 2147319.0
+Results for fold = 0 training using LASSO_REG
+
+	Explained Variance = 0.344905181522562
+	Mean Absolute Error = 0.5872862858289802
+	Mean Squared Error = 111.9820226990028
+	Root Mean Squared Error = 10.582155862535894
+	R^2 = -0.0030895206647449935 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 0
+
+Duration of fold iteration 0:16:28.162509
+Duration of fold iteration 0:16:28.162613
+
+
+Starting fold 1
+Count = 8589276, start index 2147319.0, stop index: 4294638.0
+Results for fold = 1 training using LASSO_REG
+
+	Explained Variance = 0.36467443039145675
+	Mean Absolute Error = 0.6038827952437434
+	Mean Squared Error = 125.00157778141022
+	Root Mean Squared Error = 11.180410447806029
+	R^2 = -0.0029258945030457006 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 1
+
+Duration of fold iteration 0:16:41.732824
+Duration of fold iteration 0:33:09.895454
+
+
+Starting fold 2
+Count = 8589276, start index 4294638.0, stop index: 6441957.0
+Results for fold = 2 training using LASSO_REG
+
+	Explained Variance = 0.3508948480184327
+	Mean Absolute Error = 0.5923637801369988
+	Mean Squared Error = 117.74863073441813
+	Root Mean Squared Error = 10.851204114494305
+	R^2 = -0.0029889405052727636 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 2
+
+Duration of fold iteration 0:16:35.607035
+Duration of fold iteration 0:49:45.502506
+
+
+Starting fold 3
+Count = 8589276, start index 6441957.0, stop index: 8589276.0
+Results for fold = 3 training using LASSO_REG
+
+	Explained Variance = 0.36153205587805787
+	Mean Absolute Error = 0.6012753577833568
+	Mean Squared Error = 120.53078280404542
+	Root Mean Squared Error = 10.978651228818839
+	R^2 = -0.0030085238413872784 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 3
+
+Duration of fold iteration 0:16:15.316601
+Duration of fold iteration 1:06:00.819124
+
+
+2023-12-12 12:32:01.180219 - C'est fini
+Command line arguments:
+	--master local[30]
+	--N 30
+	--iter 10000
+	--regParam 1000.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 8589276 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0])] 
+
+2023-12-12 12:39:31.426944 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 8589276, start index 0, stop index: 2147319.0
+Results for fold = 0 training using LASSO_REG
+
+	Explained Variance = 0.34490518152256217
+	Mean Absolute Error = 0.5872862858289802
+	Mean Squared Error = 111.9820226990028
+	Root Mean Squared Error = 10.582155862535894
+	R^2 = -0.0030895206647449935 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 0
+
+Duration of fold iteration 0:16:39.200578
+Duration of fold iteration 0:16:39.200684
+
+
+Starting fold 1
+Count = 8589276, start index 2147319.0, stop index: 4294638.0
+Results for fold = 1 training using LASSO_REG
+

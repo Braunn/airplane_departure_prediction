@@ -10,6 +10,8 @@ import time
 import tempfile
 import ast
 
+import csv
+
 '''
 TODO: fix corner case for mapping weather event with departure that happens across year boundry 
 TODO: make enum types for indexing into weather and departure csvs for readability and debugging?
@@ -20,22 +22,24 @@ TODO: *histogram storm duration to justify storm window?
 TODO: speedup storm selection by changing datetime hh:mm to float in hours or smth? im thinking the datetime object is clunky 
 '''
 
+def rddToCSV(data):
+    
+    with open('data_set_final.csv','wb') as out:
+        csv_out=csv.writer(out)
+        csv_out.writerow(['key','value'])
+        for row in data:
+            csv_out.writerow(row)
+
 def featureSelection(pair):
     '''
     This function is for the final step after merging the weather events into the departure RDD.
     After the join this RDD will have a tuple in it's elements of the form (departure data, weather data).
-    The "weather data" element may have a None instead of weather data which is handled here.
-    Also handles "feature selection" slicing out unused data 
+    Reformts and slices out unused data to (delay, (departure features, weather features))
     '''
     # expects departure tuple = (Origin Airport Code, datetime scheduled departure, weather delay)
     departureTuple = pair[0][:2] 
-    if pair[1] is None:
-        # use default values for weather:
-        # (Type,Severity,Precipitation(in))
-        return (pair[0][2], (departureTuple + ('None','None', 0)))
-    else:
-        weatherTuple = pair[1][1:3] + pair[1][5:6] # take slice of tuple to avoid concat issues b/w tuple and float which happens when you use pair[1][5]
-        return (pair[0][2], (departureTuple + weatherTuple))
+    weatherTuple = pair[1][1:3] + pair[1][5:6] # take slice of tuple to avoid concat issues b/w tuple and float which happens when you use pair[1][5]
+    return (pair[0][2], (departureTuple + weatherTuple))
 
 
 def flatMapHelper(x):
@@ -67,6 +71,7 @@ def matchWeatherToDeparture(weather, departure):
         timeWindow = timedelta(hours = 1) 
         mappings = []
 
+        # /!\ IN RETROSPECT the naive method of just brute forcing might be faster O(NM) < O(MN log N)
         # naive method (probably can do some insertion sort type thing for step 2): 
         # 1. sort the smaller array weather data O(N log N) 
         # 2. binary search larger array O(log M)
@@ -223,7 +228,7 @@ def readRDD(sc, name):
 
 if __name__ == "__main__": 
     #def main(sc):
-    sc = SparkContext(appName='Airplane Departure Prediction')
+    sc = SparkContext('local[35]',appName='Airplane Departure Prediction')
     sc.setLogLevel("ERROR") # Im seeing a ton of info messages without this, I messed up my spark config somehow -NCA
     
     if 0:
@@ -232,10 +237,10 @@ if __name__ == "__main__":
         weather_file = "data/debug/cleaned_weather_data_short.csv" #"cleaned_weather_data.csv"
         name_output = "data_set_short"
     else:
-        N =30 # SET NUM PARTITIONS
+        N =35 # SET NUM PARTITIONS
         departure_file = "data/processed/concatenated_data.csv" #"concatenated_data.csv"
         weather_file = "data/processed/cleaned_weather_data.csv" #"cleaned_weather_data.csv"
-        name_output = "data_set"
+        name_output = "data_set_final"
 
     startTime = datetime.now()
     print(f'Starting runRDD using N={N}, weather data ={weather_file}, and departure data {departure_file}\n')
@@ -315,8 +320,9 @@ if __name__ == "__main__":
     # Join the two RDDs together
     print('STARTING LARGE JOIN\n')
     data_set = departureRDD.leftOuterJoin(weatherRDD, numPartitions=N)\
-                .mapValues(featureSelection)\
                 .values()\
+                .filter(lambda pair: pair[1] is not None )\
+                .map(featureSelection)\
                 .cache()
     
     # Debug print out a few of them

@@ -1,0 +1,1471 @@
+/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 0.01
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 1205671 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.01]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.19]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0])] 
+
+2023-12-13 07:36:33.030717 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 1205671, start index 0, stop index: 301418.0
+Results for fold = 0 training using LASSO_REG
+
+	Explained Variance = 0.5561747890281644
+	Mean Absolute Error = 2.948698285638391
+	Mean Squared Error = 299.0233936695997
+	Root Mean Squared Error = 17.29229289798203
+	R^2 = 0.0030375377908754553 
+
+	weights =
+	 [0.0,-0.996820835369669,0.0,0.11950355344236409,-0.2651929701089039,1.8181899683694174,0.0,-0.24541777466669737,-0.0,0.4287911865222158,0.015342427194442093,0.0,0.11950355344236409,1.0757759687563004] 
+
+	intercept = 1.8081767547125287 
+
+End of fold 0
+
+Duration of fold iteration 0:01:45.853037
+Duration of fold iteration 0:01:45.853075
+
+
+Starting fold 1
+Count = 1205671, start index 301418.0, stop index: 602836.0
+Results for fold = 1 training using LASSO_REG
+
+	Explained Variance = 0.5873240485966984
+	Mean Absolute Error = 2.9541570021677916
+	Mean Squared Error = 320.12189499149804
+	Root Mean Squared Error = 17.891950564192214
+	R^2 = 0.0025313631382982704 
+
+	weights =
+	 [0.0,-0.9850303921426793,0.0,0.19077916268997183,-0.2898855294025906,1.8018742455000272,0.0,-0.24630720884537285,-0.0,0.4288891146896981,0.00953791239360971,0.0,0.19077916268997183,1.20212464346233] 
+
+	intercept = 1.812724038485349 
+
+End of fold 1
+
+Duration of fold iteration 0:01:08.855832
+Duration of fold iteration 0:02:54.708925
+
+
+Starting fold 2
+Count = 1205671, start index 602836.0, stop index: 904254.0
+Results for fold = 2 training using LASSO_REG
+
+	Explained Variance = 0.5904173102915751
+	Mean Absolute Error = 2.992138198083921
+	Mean Squared Error = 336.9105181775042
+	Root Mean Squared Error = 18.3551223961461
+	R^2 = 0.0024547043353027043 
+
+	weights =
+	 [0.0,-1.0038024302107977,0.0,0.1929756243401658,-0.3024505562631627,1.7756493568616487,0.0,-0.24828685905985226,-0.0,0.44868180444736255,0.01223230547368827,0.0,0.1929756243401658,1.1814184066717057] 
+
+	intercept = 1.8108024042699378 
+
+End of fold 2
+
+Duration of fold iteration 0:01:06.419776
+Duration of fold iteration 0:04:01.128718
+
+
+Starting fold 3
+Count = 1205671, start index 904254.0, stop index: 1205671.0
+Results for fold = 3 training using LASSO_REG
+
+	Explained Variance = 0.5829008099604898
+	Mean Absolute Error = 2.947276465380383
+	Mean Squared Error = 303.1939186594252
+	Root Mean Squared Error = 17.412464462545937
+	R^2 = 0.0026993732283654426 
+
+	weights =
+	 [0.0,-0.9721141087316562,0.0,0.12213088864033812,-0.282003171679247,1.7897851194956063,0.0,-0.21383810993951824,-0.0,0.4286790467664258,0.012431261653142003,0.0,0.12213088864033812,1.24329984558703] 
+
+	intercept = 1.786221124195376 
+
+End of fold 3
+
+Duration of fold iteration 0:01:04.049223
+Duration of fold iteration 0:05:05.177959
+
+
+2023-12-13 07:41:45.529111 - C'est fini
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 0.1
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 1205671 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.06]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.04]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0])] 
+
+2023-12-13 07:43:09.468469 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 1205671, start index 0, stop index: 301418.0
+Results for fold = 0 training using LASSO_REG
+
+	Explained Variance = 0.10823982284529915
+	Mean Absolute Error = 2.8921346951562676
+	Mean Squared Error = 299.4787277321509
+	Root Mean Squared Error = 17.305453699113205
+	R^2 = 0.001519425904852656 
+
+	weights =
+	 [0.0,-0.11439547068369539,0.0,0.0,0.0,1.0775320503147927,0.0,0.0,0.0,0.0,-0.0,0.0,0.0,0.3835305539009023] 
+
+	intercept = 1.355210446236612 
+
+End of fold 0
+
+Duration of fold iteration 0:01:55.156606
+Duration of fold iteration 0:01:55.156658
+
+
+Starting fold 1
+Count = 1205671, start index 301418.0, stop index: 602836.0
+Results for fold = 1 training using LASSO_REG
+
+	Explained Variance = 0.11802311502388046
+	Mean Absolute Error = 2.8962796417989947
+	Mean Squared Error = 320.482706299898
+	Root Mean Squared Error = 17.902030787033574
+	R^2 = 0.0014071102534292113 
+
+	weights =
+	 [0.0,-0.08417638808928014,0.0,0.0,0.0,1.0857185265970364,0.0,0.0,0.0,0.0,-0.0,0.0,0.0,0.5327555661478541] 
+
+	intercept = 1.3352795461264375 
+
+End of fold 1
+
+Duration of fold iteration 0:01:17.670564
+Duration of fold iteration 0:03:12.827240
+
+
+Starting fold 2
+Count = 1205671, start index 602836.0, stop index: 904254.0
+Results for fold = 2 training using LASSO_REG
+
+	Explained Variance = 0.13196785946604014
+	Mean Absolute Error = 2.933917436990693
+	Mean Squared Error = 337.2960451174046
+	Root Mean Squared Error = 18.365621283185728
+	R^2 = 0.001313212560780208 
+
+	weights =
+	 [0.0,-0.09391657780836872,0.0,0.0,0.0,1.0668165893371695,0.0,0.0,0.0,0.0,-0.0,0.0,0.0,0.5080870625106139] 
+
+	intercept = 1.322046759752608 
+
+End of fold 2
+
+Duration of fold iteration 0:01:10.862355
+Duration of fold iteration 0:04:23.689612
+
+
+Starting fold 3
+Count = 1205671, start index 904254.0, stop index: 1205671.0
+Results for fold = 3 training using LASSO_REG
+
+	Explained Variance = 0.11525330599272414
+	Mean Absolute Error = 2.888239064813698
+	Mean Squared Error = 303.55714493592603
+	Root Mean Squared Error = 17.422891405731885
+	R^2 = 0.0015046072026618784 
+
+	weights =
+	 [0.0,-0.09685802980298266,0.0,0.0,0.0,1.0674554444023372,0.0,0.0,0.0,0.0,-0.0,0.0,0.0,0.5567534480515068] 
+
+	intercept = 1.3411638877591578 
+
+End of fold 3
+
+Duration of fold iteration 0:01:07.516875
+Duration of fold iteration 0:05:31.206504
+
+
+2023-12-13 07:48:48.149584 - C'est fini
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 1.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 1205671 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.26]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0])] 
+
+2023-12-13 07:50:12.552555 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 1205671, start index 0, stop index: 301418.0
+Results for fold = 0 training using LASSO_REG
+
+	Explained Variance = 0.9652342979006653
+	Mean Absolute Error = 2.0590507079585145
+	Mean Squared Error = 300.8996902121631
+	Root Mean Squared Error = 17.34646045198164
+	R^2 = -0.003218150762292593 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.5565455685516745 
+
+End of fold 0
+
+Duration of fold iteration 0:01:11.001357
+Duration of fold iteration 0:01:11.001398
+
+
+Starting fold 1
+Count = 1205671, start index 301418.0, stop index: 602836.0
+Results for fold = 1 training using LASSO_REG
+
+	Explained Variance = 0.9746444021756527
+	Mean Absolute Error = 2.0618641366462933
+	Mean Squared Error = 321.90894064098705
+	Root Mean Squared Error = 17.94182099567898
+	R^2 = -0.0030368970022733865 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.5553512125477076 
+
+End of fold 1
+
+Duration of fold iteration 0:00:43.181473
+Duration of fold iteration 0:01:54.182889
+
+
+Starting fold 2
+Count = 1205671, start index 602836.0, stop index: 904254.0
+Results for fold = 2 training using LASSO_REG
+
+	Explained Variance = 1.1257936759132954
+	Mean Absolute Error = 2.099820412899669
+	Mean Squared Error = 338.8653626375171
+	Root Mean Squared Error = 18.408296027539244
+	R^2 = -0.003333318862639434 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.5369028358211207 
+
+End of fold 2
+
+Duration of fold iteration 0:00:41.643187
+Duration of fold iteration 0:02:35.826096
+
+
+Starting fold 3
+Count = 1205671, start index 904254.0, stop index: 1205671.0
+Results for fold = 3 training using LASSO_REG
+
+	Explained Variance = 0.9394678530277332
+	Mean Absolute Error = 2.0528683465361928
+	Mean Squared Error = 304.95403529681465
+	Root Mean Squared Error = 17.462933181364882
+	R^2 = -0.0030902066992961608 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.5598460167164885 
+
+End of fold 3
+
+Duration of fold iteration 0:00:39.772924
+Duration of fold iteration 0:03:15.599038
+
+
+2023-12-13 07:53:35.822125 - C'est fini
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 100.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 1205671 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.13]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.12]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.14]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.01]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.02])] 
+
+2023-12-13 07:54:59.919974 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 1205671, start index 0, stop index: 301418.0
+Results for fold = 0 training using LASSO_REG
+
+	Explained Variance = 2.3685485513343125
+	Mean Absolute Error = 1.5390089510248226
+	Mean Squared Error = 302.30300446555947
+	Root Mean Squared Error = 17.386862985183942
+	R^2 = -0.007896887151944698 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 0
+
+Duration of fold iteration 0:01:12.260339
+Duration of fold iteration 0:01:12.260380
+
+
+Starting fold 1
+Count = 1205671, start index 301418.0, stop index: 602836.0
+Results for fold = 1 training using LASSO_REG
+
+	Explained Variance = 2.3795901249745666
+	Mean Absolute Error = 1.5425920150754102
+	Mean Squared Error = 323.3138863637871
+	Root Mean Squared Error = 17.980931187338076
+	R^2 = -0.0074145709974347 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 1
+
+Duration of fold iteration 0:00:43.766670
+Duration of fold iteration 0:01:56.027067
+
+
+Starting fold 2
+Count = 1205671, start index 602836.0, stop index: 904254.0
+Results for fold = 2 training using LASSO_REG
+
+	Explained Variance = 2.5534029245802117
+	Mean Absolute Error = 1.5979370840493932
+	Mean Squared Error = 340.29297188621774
+	Root Mean Squared Error = 18.447031519629867
+	R^2 = -0.007560271757409032 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 2
+
+Duration of fold iteration 0:00:42.093687
+Duration of fold iteration 0:02:38.120770
+
+
+Starting fold 3
+Count = 1205671, start index 904254.0, stop index: 1205671.0
+Results for fold = 3 training using LASSO_REG
+
+	Explained Variance = 2.338169793964311
+	Mean Absolute Error = 1.52910751550178
+	Mean Squared Error = 306.3527372377803
+	Root Mean Squared Error = 17.50293510351279
+	R^2 = -0.00769097946070052 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 3
+
+Duration of fold iteration 0:00:40.362362
+Duration of fold iteration 0:03:18.483150
+
+
+2023-12-13 07:58:25.895809 - C'est fini
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 1000.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 1205671 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0])] 
+
+2023-12-13 07:59:49.327270 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 1205671, start index 0, stop index: 301418.0
+Results for fold = 0 training using LASSO_REG
+
+	Explained Variance = 2.368548551334313
+	Mean Absolute Error = 1.5390089510248226
+	Mean Squared Error = 302.30300446555947
+	Root Mean Squared Error = 17.386862985183942
+	R^2 = -0.007896887151944698 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 0
+
+Duration of fold iteration 0:01:12.284961
+Duration of fold iteration 0:01:12.285001
+
+
+Starting fold 1
+Count = 1205671, start index 301418.0, stop index: 602836.0
+Results for fold = 1 training using LASSO_REG
+
+	Explained Variance = 2.379590124974566
+	Mean Absolute Error = 1.5425920150754102
+	Mean Squared Error = 323.3138863637871
+	Root Mean Squared Error = 17.980931187338076
+	R^2 = -0.0074145709974347 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 1
+
+Duration of fold iteration 0:00:43.950321
+Duration of fold iteration 0:01:56.235342
+
+
+Starting fold 2
+Count = 1205671, start index 602836.0, stop index: 904254.0
+Results for fold = 2 training using LASSO_REG
+
+	Explained Variance = 2.553402924580212
+	Mean Absolute Error = 1.5979370840493932
+	Mean Squared Error = 340.29297188621774
+	Root Mean Squared Error = 18.447031519629867
+	R^2 = -0.007560271757409032 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 2
+
+Duration of fold iteration 0:00:42.081847
+Duration of fold iteration 0:02:38.317207
+
+
+Starting fold 3
+Count = 1205671, start index 904254.0, stop index: 1205671.0
+Results for fold = 3 training using LASSO_REG
+
+	Explained Variance = 2.3381697939643113
+	Mean Absolute Error = 1.52910751550178
+	Mean Squared Error = 306.3527372377803
+	Root Mean Squared Error = 17.50293510351279
+	R^2 = -0.00769097946070052 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 3
+
+Duration of fold iteration 0:00:40.402771
+Duration of fold iteration 0:03:18.719997
+
+
+2023-12-13 08:03:15.691613 - C'est fini
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 10000.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 1205671 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.18]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.23]), LabeledPoint(18.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.11]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.02])] 
+
+2023-12-13 08:04:40.110258 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 1205671, start index 0, stop index: 301418.0
+Results for fold = 0 training using LASSO_REG
+
+	Explained Variance = 2.368548551334312
+	Mean Absolute Error = 1.5390089510248226
+	Mean Squared Error = 302.30300446555947
+	Root Mean Squared Error = 17.386862985183942
+	R^2 = -0.007896887151944698 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 0
+
+Duration of fold iteration 0:01:13.434214
+Duration of fold iteration 0:01:13.434263
+
+
+Starting fold 1
+Count = 1205671, start index 301418.0, stop index: 602836.0
+Results for fold = 1 training using LASSO_REG
+
+	Explained Variance = 2.3795901249745657
+	Mean Absolute Error = 1.5425920150754102
+	Mean Squared Error = 323.3138863637871
+	Root Mean Squared Error = 17.980931187338076
+	R^2 = -0.0074145709974347 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 1
+
+Duration of fold iteration 0:00:45.288269
+Duration of fold iteration 0:01:58.722552
+
+
+Starting fold 2
+Count = 1205671, start index 602836.0, stop index: 904254.0
+Results for fold = 2 training using LASSO_REG
+
+	Explained Variance = 2.5534029245802126
+	Mean Absolute Error = 1.5979370840493932
+	Mean Squared Error = 340.29297188621774
+	Root Mean Squared Error = 18.447031519629867
+	R^2 = -0.007560271757409032 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 2
+
+Duration of fold iteration 0:00:42.961211
+Duration of fold iteration 0:02:41.683780
+
+
+Starting fold 3
+Count = 1205671, start index 904254.0, stop index: 1205671.0
+Results for fold = 3 training using LASSO_REG
+
+	Explained Variance = 2.3381697939643113
+	Mean Absolute Error = 1.52910751550178
+	Mean Squared Error = 306.3527372377803
+	Root Mean Squared Error = 17.50293510351279
+	R^2 = -0.00769097946070052 
+
+	weights =
+	 [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] 
+
+	intercept = 0.0 
+
+End of fold 3
+
+Duration of fold iteration 0:00:40.946070
+Duration of fold iteration 0:03:22.629867
+
+
+2023-12-13 08:08:09.771811 - C'est fini
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 0.01
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type RIDGE_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 1205671 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.04]), LabeledPoint(0.0, [0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.07]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.19])] 
+
+2023-12-13 08:09:37.198932 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 1205671, start index 0, stop index: 301418.0
+Results for fold = 0 training using RIDGE_REG
+
+	Explained Variance = 0.555355448781174
+	Mean Absolute Error = 2.9424201025801158
+	Mean Squared Error = 299.00933042338977
+	Root Mean Squared Error = 17.291886259844233
+	R^2 = 0.0030844255222870487 
+
+	weights =
+	 [0.020273639427824505,-1.029718252302509,0.19108166716735572,0.2580926601161146,-0.2934391015865695,1.756604254052484,0.0692135038381361,-0.19082727982435324,0.04942562804415057,0.5544821602769305,0.10985353493266252,0.19108166716735572,0.2580926601161146,1.0614441747215797] 
+
+	intercept = 1.7717581536491782 
+
+End of fold 0
+
+Duration of fold iteration 0:01:42.726478
+Duration of fold iteration 0:01:42.726517
+
+
+Starting fold 1
+Count = 1205671, start index 301418.0, stop index: 602836.0
+Results for fold = 1 training using RIDGE_REG
+
+	Explained Variance = 0.5856257220524924
+	Mean Absolute Error = 2.9480143290348955
+	Mean Squared Error = 320.11533161052665
+	Root Mean Squared Error = 17.89176714610736
+	R^2 = 0.002551813993966534 
+
+	weights =
+	 [0.02196672628255819,-1.016666885933275,0.1495705619540577,0.3218115504927664,-0.3160556026867805,1.7413144086568297,0.07432525858091331,-0.19535712514282996,0.051227376779064575,0.5527813772373569,0.09623227602665259,0.1495705619540577,0.3218115504927664,1.1769183858318777] 
+
+	intercept = 1.7786297577670174 
+
+End of fold 1
+
+Duration of fold iteration 0:01:13.002293
+Duration of fold iteration 0:02:55.728829
+
+
+Starting fold 2
+Count = 1205671, start index 602836.0, stop index: 904254.0
+Results for fold = 2 training using RIDGE_REG
+
+	Explained Variance = 0.5919548360981546
+	Mean Absolute Error = 2.985968812635582
+	Mean Squared Error = 336.90770547206733
+	Root Mean Squared Error = 18.35504577689926
+	R^2 = 0.002463032365818796 
+
+	weights =
+	 [0.059748989579019376,-1.0311089298475855,0.1720166986021254,0.3237915233195797,-0.3245695348809071,1.7208221940038342,0.0612303786017329,-0.20772966972834372,0.02909646617696979,0.5696275061212004,0.0951287948862623,0.1720166986021254,0.3237915233195797,1.1594406331038947] 
+
+	intercept = 1.7836120424237834 
+
+End of fold 2
+
+Duration of fold iteration 0:01:10.963834
+Duration of fold iteration 0:04:06.692681
+
+
+Starting fold 3
+Count = 1205671, start index 904254.0, stop index: 1205671.0
+Results for fold = 3 training using RIDGE_REG
+
+	Explained Variance = 0.5794478378370652
+	Mean Absolute Error = 2.9411531309734857
+	Mean Squared Error = 303.1806645707475
+	Root Mean Squared Error = 17.41208386640575
+	R^2 = 0.002742970115149901 
+
+	weights =
+	 [0.05270913129244998,-1.0023156880237412,0.15706751519462003,0.2599284399302993,-0.3084662987503324,1.7274224181987747,0.06447965872050108,-0.16391969199983913,0.04712429467894726,0.5522797975613493,0.09834482119721279,0.15706751519462003,0.2599284399302993,1.2147769567640223] 
+
+	intercept = 1.7538750087562085 
+
+End of fold 3
+
+Duration of fold iteration 0:01:07.783553
+Duration of fold iteration 0:05:14.476252
+
+
+2023-12-13 08:14:59.278529 - C'est fini
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 0.1
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type RIDGE_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 1205671 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.11]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.01]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.18])] 
+
+2023-12-13 08:16:22.964510 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 1205671, start index 0, stop index: 301418.0
+Results for fold = 0 training using RIDGE_REG
+
+	Explained Variance = 0.18509203443057223
+	Mean Absolute Error = 2.8714223875557283
+	Mean Squared Error = 299.333839249446
+	Root Mean Squared Error = 17.30126698393635
+	R^2 = 0.002002493054518051 
+
+	weights =
+	 [0.015815964170421706,-0.40454184137143095,0.08134185762889197,0.17422111608615812,0.010890826925696599,1.072682586225592,0.03915754372713609,0.16177734474632538,0.17624075561494723,0.31180271977010277,0.08418425954603977,0.08134185762889197,0.17422111608615812,0.6868256774269942] 
+
+	intercept = 1.1880361366988803 
+
+End of fold 0
+
+Duration of fold iteration 0:01:38.665734
+Duration of fold iteration 0:01:38.665775
+
+
+Starting fold 1
+Count = 1205671, start index 301418.0, stop index: 602836.0
+Results for fold = 1 training using RIDGE_REG
+
+	Explained Variance = 0.19378365872653028
+	Mean Absolute Error = 2.874853995304441
+	Mean Squared Error = 320.37791787618914
+	Root Mean Squared Error = 17.899103828856603
+	R^2 = 0.0017336207726752484 
+
+	weights =
+	 [0.01649191355175899,-0.4000113185029686,0.06495860735797793,0.20521245063552052,-0.0009304074450887642,1.0676829037976405,0.04145068274574886,0.14999278332193494,0.17959611606430984,0.3154709796271992,0.07962389513364478,0.06495860735797793,0.20521245063552052,0.7536331221442899] 
+
+	intercept = 1.1956413990157024 
+
+End of fold 1
+
+Duration of fold iteration 0:01:05.154640
+Duration of fold iteration 0:02:43.820433
+
+
+Starting fold 2
+Count = 1205671, start index 602836.0, stop index: 904254.0
+Results for fold = 2 training using RIDGE_REG
+
+	Explained Variance = 0.21362874410961813
+	Mean Absolute Error = 2.913232957666411
+	Mean Squared Error = 337.1874641698099
+	Root Mean Squared Error = 18.36266495282779
+	R^2 = 0.0016347056802524795 
+
+	weights =
+	 [0.03198703579099878,-0.40738582984759303,0.07397468570129391,0.20512202626197254,-0.0060931306270519715,1.0569006213776087,0.03585994876788477,0.14345605182805662,0.16652105180636206,0.32208442887795075,0.07920711294948454,0.07397468570129391,0.20512202626197254,0.7423566643985261] 
+
+	intercept = 1.1911519243002489 
+
+End of fold 2
+
+Duration of fold iteration 0:00:58.048626
+Duration of fold iteration 0:03:41.869076
+
+
+Starting fold 3
+Count = 1205671, start index 904254.0, stop index: 1205671.0
+Results for fold = 3 training using RIDGE_REG
+
+	Explained Variance = 0.19116801204079384
+	Mean Absolute Error = 2.867771175561024
+	Mean Squared Error = 303.4614504168014
+	Root Mean Squared Error = 17.42014495969541
+	R^2 = 0.001819376721534649 
+
+	weights =
+	 [0.02921849460024675,-0.39683406804998794,0.06839425664219528,0.17720125942849368,0.0076125154498907785,1.0619835161983204,0.037220576008670805,0.16690854474426534,0.17438075849757445,0.31722482968368626,0.080686901281619,0.06839425664219528,0.17720125942849368,0.7717166813054749] 
+
+	intercept = 1.183264633584263 
+
+End of fold 3
+
+Duration of fold iteration 0:00:58.627141
+Duration of fold iteration 0:04:40.496234
+
+
+2023-12-13 08:21:10.967017 - C'est fini
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 1.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type RIDGE_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 1205671 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.17]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.11]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0])] 
+
+2023-12-13 08:22:38.945055 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 1205671, start index 0, stop index: 301418.0
+Results for fold = 0 training using RIDGE_REG
+
+	Explained Variance = 0.32101249485780237
+	Mean Absolute Error = 2.4743697907398277
+	Mean Squared Error = 300.1795750159416
+	Root Mean Squared Error = 17.325691184363805
+	R^2 = -0.000817242223703829 
+
+	weights =
+	 [0.003716179459114801,0.003965202770971652,0.011111733024067854,0.0382551312081484,0.25652170716,0.23319591146897556,0.0074604205136636,0.2884331027862693,0.11408202918761204,0.06127611792613419,0.041068171472713536,0.011111733024067854,0.0382551312081484,0.16708376553186546] 
+
+	intercept = 0.554226285604992 
+
+End of fold 0
+
+Duration of fold iteration 0:01:20.984584
+Duration of fold iteration 0:01:20.984647
+
+
+Starting fold 1
+Count = 1205671, start index 301418.0, stop index: 602836.0
+Results for fold = 1 training using RIDGE_REG
+
+	Explained Variance = 0.326964423346016
+	Mean Absolute Error = 2.4755655915555144
+	Mean Squared Error = 321.1766727542505
+	Root Mean Squared Error = 17.92140264472205
+	R^2 = -0.0007552216085295882 
+
+	weights =
+	 [0.003819319525577391,0.005636862424329073,0.009034749877098187,0.04311785341007876,0.2535970615108454,0.2324229460401063,0.007794660244357335,0.2832681911230791,0.11635224553887671,0.06266260769882472,0.040987805384429685,0.009034749877098187,0.04311785341007876,0.17986576462476728] 
+
+	intercept = 0.5554234530324424 
+
+End of fold 1
+
+Duration of fold iteration 0:00:51.742430
+Duration of fold iteration 0:02:12.727096
+
+
+Starting fold 2
+Count = 1205671, start index 602836.0, stop index: 904254.0
+Results for fold = 2 training using RIDGE_REG
+
+	Explained Variance = 0.40456273607963994
+	Mean Absolute Error = 2.519090366223282
+	Mean Squared Error = 338.05355576800207
+	Root Mean Squared Error = 18.386232778032646
+	R^2 = -0.0009296713658097921 
+
+	weights =
+	 [0.005789524667407279,0.003428248788631875,0.010183119321616124,0.04282120244581397,0.24978325049155148,0.23054448509618658,0.00702648703656086,0.2796706045654254,0.11297064217209513,0.06336600666352464,0.040564742679290486,0.010183119321616124,0.04282120244581397,0.17699687985207696] 
+
+	intercept = 0.5495763178477693 
+
+End of fold 2
+
+Duration of fold iteration 0:00:48.234751
+Duration of fold iteration 0:03:00.961865
+
+
+Starting fold 3
+Count = 1205671, start index 904254.0, stop index: 1205671.0
+Results for fold = 3 training using RIDGE_REG
+
+	Explained Variance = 0.30927516813270184
+	Mean Absolute Error = 2.46698626668796
+	Mean Squared Error = 304.2591107771204
+	Root Mean Squared Error = 17.443024702646053
+	R^2 = -0.0008043803142736561 
+
+	weights =
+	 [0.005428402531741311,0.004736004786628781,0.009438551453887386,0.03900073071891282,0.25776652131071615,0.23105440758753876,0.0071694811391727845,0.28833848398166284,0.11418815192768675,0.06311317422676296,0.040515007219678975,0.009438551453887386,0.03900073071891282,0.18245679480169316] 
+
+	intercept = 0.5545940995286185 
+
+End of fold 3
+
+Duration of fold iteration 0:00:50.196675
+Duration of fold iteration 0:03:51.158557
+
+
+2023-12-13 08:26:38.308195 - C'est fini
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 100.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type RIDGE_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 1205671 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.01]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.04]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.27])] 
+
+2023-12-13 08:28:05.763756 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 1205671, start index 0, stop index: 301418.0
+Results for fold = 0 training using RIDGE_REG
+
+	Explained Variance = nan
+	Mean Absolute Error = nan
+	Mean Squared Error = nan
+	Root Mean Squared Error = nan
+	R^2 = nan 
+
+	weights =
+	 [nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan] 
+
+	intercept = nan 
+
+End of fold 0
+
+Duration of fold iteration 0:35:02.587367
+Duration of fold iteration 0:35:02.587408
+
+
+Starting fold 1
+Count = 1205671, start index 301418.0, stop index: 602836.0
+Results for fold = 1 training using RIDGE_REG
+
+	Explained Variance = nan
+	Mean Absolute Error = nan
+	Mean Squared Error = nan
+	Root Mean Squared Error = nan
+	R^2 = nan 
+
+	weights =
+	 [nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan] 
+
+	intercept = nan 
+
+End of fold 1
+
+Duration of fold iteration 0:34:55.955181
+Duration of fold iteration 1:09:58.542611
+
+
+Starting fold 2
+Count = 1205671, start index 602836.0, stop index: 904254.0
+Results for fold = 2 training using RIDGE_REG
+
+	Explained Variance = nan
+	Mean Absolute Error = nan
+	Mean Squared Error = nan
+	Root Mean Squared Error = nan
+	R^2 = nan 
+
+	weights =
+	 [nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan] 
+
+	intercept = nan 
+
+End of fold 2
+
+Duration of fold iteration 0:30:34.580394
+Duration of fold iteration 1:40:33.123027
+
+
+Starting fold 3
+Count = 1205671, start index 904254.0, stop index: 1205671.0
+Results for fold = 3 training using RIDGE_REG
+
+	Explained Variance = nan
+	Mean Absolute Error = nan
+	Mean Squared Error = nan
+	Root Mean Squared Error = nan
+	R^2 = nan 
+
+	weights =
+	 [nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan] 
+
+	intercept = nan 
+
+End of fold 3
+
+Duration of fold iteration 0:30:38.864398
+Duration of fold iteration 2:11:11.987448
+
+
+2023-12-13 10:39:25.690963 - C'est fini
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 1000.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type RIDGE_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 1205671 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.01]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.25]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.1]), LabeledPoint(54.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0])] 
+
+2023-12-13 10:40:52.435756 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 1205671, start index 0, stop index: 301418.0
+Results for fold = 0 training using RIDGE_REG
+
+	Explained Variance = nan
+	Mean Absolute Error = nan
+	Mean Squared Error = nan
+	Root Mean Squared Error = nan
+	R^2 = nan 
+
+	weights =
+	 [nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan] 
+
+	intercept = nan 
+
+End of fold 0
+
+Duration of fold iteration 0:35:00.728358
+Duration of fold iteration 0:35:00.728396
+
+
+Starting fold 1
+Count = 1205671, start index 301418.0, stop index: 602836.0
+Results for fold = 1 training using RIDGE_REG
+
+	Explained Variance = nan
+	Mean Absolute Error = nan
+	Mean Squared Error = nan
+	Root Mean Squared Error = nan
+	R^2 = nan 
+
+	weights =
+	 [nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan] 
+
+	intercept = nan 
+
+End of fold 1
+
+Duration of fold iteration 0:34:11.560880
+Duration of fold iteration 1:09:12.289297
+
+
+Starting fold 2
+Count = 1205671, start index 602836.0, stop index: 904254.0
+Results for fold = 2 training using RIDGE_REG
+
+	Explained Variance = nan
+	Mean Absolute Error = nan
+	Mean Squared Error = nan
+	Root Mean Squared Error = nan
+	R^2 = nan 
+
+	weights =
+	 [nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan] 
+
+	intercept = nan 
+
+End of fold 2
+
+Duration of fold iteration 0:34:23.270909
+Duration of fold iteration 1:43:35.560235
+
+
+Starting fold 3
+Count = 1205671, start index 904254.0, stop index: 1205671.0
+Results for fold = 3 training using RIDGE_REG
+
+	Explained Variance = nan
+	Mean Absolute Error = nan
+	Mean Squared Error = nan
+	Root Mean Squared Error = nan
+	R^2 = nan 
+
+	weights =
+	 [nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan] 
+
+	intercept = nan 
+
+End of fold 3
+
+Duration of fold iteration 0:33:51.243483
+Duration of fold iteration 2:17:26.803742
+
+
+2023-12-13 12:58:26.805762 - C'est fini
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 10000.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type RIDGE_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 1205671 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.05]), LabeledPoint(0.0, [0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0])] 
+
+2023-12-13 12:59:53.536736 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 1205671, start index 0, stop index: 301418.0
+Results for fold = 0 training using RIDGE_REG
+
+	Explained Variance = nan
+	Mean Absolute Error = nan
+	Mean Squared Error = nan
+	Root Mean Squared Error = nan
+	R^2 = nan 
+
+	weights =
+	 [nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan] 
+
+	intercept = nan 
+
+End of fold 0
+
+Duration of fold iteration 0:31:40.549179
+Duration of fold iteration 0:31:40.549218
+
+
+Starting fold 1
+Count = 1205671, start index 301418.0, stop index: 602836.0
+Results for fold = 1 training using RIDGE_REG
+
+	Explained Variance = nan
+	Mean Absolute Error = nan
+	Mean Squared Error = nan
+	Root Mean Squared Error = nan
+	R^2 = nan 
+
+	weights =
+	 [nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan] 
+
+	intercept = nan 
+
+End of fold 1
+
+Duration of fold iteration 0:30:53.567131
+Duration of fold iteration 1:02:34.116370
+
+
+Starting fold 2
+Count = 1205671, start index 602836.0, stop index: 904254.0
+Results for fold = 2 training using RIDGE_REG
+
+	Explained Variance = nan
+	Mean Absolute Error = nan
+	Mean Squared Error = nan
+	Root Mean Squared Error = nan
+	R^2 = nan 
+
+	weights =
+	 [nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan] 
+
+	intercept = nan 
+
+End of fold 2
+
+Duration of fold iteration 0:29:37.007725
+Duration of fold iteration 1:32:11.124115
+
+
+Starting fold 3
+Count = 1205671, start index 904254.0, stop index: 1205671.0
+Results for fold = 3 training using RIDGE_REG
+
+	Explained Variance = nan
+	Mean Absolute Error = nan
+	Mean Squared Error = nan
+	Root Mean Squared Error = nan
+	R^2 = nan 
+
+	weights =
+	 [nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan] 
+
+	intercept = nan 
+
+End of fold 3
+
+Duration of fold iteration 0:30:01.852765
+Duration of fold iteration 2:02:12.976903
+
+
+2023-12-13 15:02:13.987441 - C'est fini
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 0.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LIN_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 1205671 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.03]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.01]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0])] 
+
+2023-12-13 15:03:42.925797 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 1205671, start index 0, stop index: 301418.0
+Results for fold = 0 training using LIN_REG
+
+	Explained Variance = 0.6725889757093884
+	Mean Absolute Error = 2.95189994360604
+	Mean Squared Error = 298.97079598847205
+	Root Mean Squared Error = 17.290771989372598
+	R^2 = 0.0032129017081933275 
+
+	weights =
+	 [0.019617548382807496,-1.1988301202898093,0.22473873806201913,0.26904137661413957,-0.3621692156847186,1.8979564519620984,0.07570029993134457,-0.29740161419636035,0.001514003150930789,0.6102248995303097,0.11793767581685786,0.22473873806201913,0.26904137661413957,1.1281148230233662] 
+
+	intercept = 1.9260550789779014 
+
+End of fold 0
+
+Duration of fold iteration 0:02:02.141387
+Duration of fold iteration 0:02:02.141428
+
+
+Starting fold 1
+Count = 1205671, start index 301418.0, stop index: 602836.0
+Results for fold = 1 training using LIN_REG
+
+	Explained Variance = 0.70888879489336
+	Mean Absolute Error = 2.9579522403235115
+	Mean Squared Error = 320.0912309446419
+	Root Mean Squared Error = 17.89109362069971
+	R^2 = 0.0026269093208519667 
+
+	weights =
+	 [0.021720172082921672,-1.1818431890248862,0.17504772506488742,0.3418742235398811,-0.3874425051641975,1.8796528512812831,0.08171823190191657,-0.29778031606489797,0.003676640941263816,0.6061602653120565,0.101748970888638,0.17504772506488742,0.3418742235398811,1.2549356726298824] 
+
+	intercept = 1.9307275096818377 
+
+End of fold 1
+
+Duration of fold iteration 0:01:14.794602
+Duration of fold iteration 0:03:16.936048
+
+
+Starting fold 2
+Count = 1205671, start index 602836.0, stop index: 904254.0
+Results for fold = 2 training using LIN_REG
+
+	Explained Variance = 0.714349836087205
+	Mean Absolute Error = 2.995967073035229
+	Mean Squared Error = 336.8814846165787
+	Root Mean Squared Error = 18.35433149467936
+	R^2 = 0.002540668680595992 
+
+	weights =
+	 [0.06653389675873388,-1.1999911691791831,0.2022130332009517,0.3446983890456031,-0.3974581377660612,1.857606688859192,0.06638032959202256,-0.31303060308362807,-0.021198969966442067,0.6266454906400859,0.10065569067468491,0.2022130332009517,0.3446983890456031,1.2362259964875366] 
+
+	intercept = 1.9399830305112526 
+
+End of fold 2
+
+Duration of fold iteration 0:01:09.528328
+Duration of fold iteration 0:04:26.464394
+
+
+Starting fold 3
+Count = 1205671, start index 904254.0, stop index: 1205671.0
+Results for fold = 3 training using LIN_REG
+
+	Explained Variance = 0.700031223746155
+	Mean Absolute Error = 2.951097262440374
+	Mean Squared Error = 303.1515606466857
+	Root Mean Squared Error = 17.411248107091165
+	R^2 = 0.0028387021200552143 
+
+	weights =
+	 [0.05802612937942487,-1.1628353040296533,0.18338069864521278,0.27043522057898894,-0.3803965409051548,1.8627857781740012,0.07016109866196486,-0.26110465717640957,0.0008454365311558969,0.6042607043214707,0.10373967760439531,0.18338069864521278,0.27043522057898894,1.298350263722281] 
+
+	intercept = 1.9015570805047124 
+
+End of fold 3
+
+Duration of fold iteration 0:01:08.358804
+Duration of fold iteration 0:05:34.823216
+
+
+2023-12-13 15:09:25.210895 - C'est fini
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 0.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LIN_REG
+	--seed 5
+	--intercept True
+
+
+departureWeatherRDD.count() = 1205671 
+
+departureWeatherRDD.takeSample(False, 5) =
+ [LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.06]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.1]), LabeledPoint(0.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.01]), LabeledPoint(8.0, [0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.03])] 
+
+2023-12-13 15:10:52.756659 - Training linear regression model with stochastic gradient descent
+Using seed 5 to shuffle trainRDD
+
+Starting fold 0
+Count = 1205671, start index 0, stop index: 301418.0
+Results for fold = 0 training using LIN_REG
+
+	Explained Variance = 0.6725889757093885
+	Mean Absolute Error = 2.95189994360604
+	Mean Squared Error = 298.97079598847205
+	Root Mean Squared Error = 17.290771989372598
+	R^2 = 0.0032129017081933275 
+
+	weights =
+	 [0.019617548382807503,-1.198830120289809,0.2247387380620191,0.26904137661413957,-0.36216921568471855,1.8979564519620986,0.07570029993134458,-0.29740161419636024,0.0015140031509309113,0.6102248995303097,0.11793767581685796,0.2247387380620191,0.26904137661413957,1.1281148230233662] 
+
+	intercept = 1.9260550789779012 
+
+End of fold 0
+
+Duration of fold iteration 0:02:02.098608
+Duration of fold iteration 0:02:02.098649
+
+
+Starting fold 1
+Count = 1205671, start index 301418.0, stop index: 602836.0
+Results for fold = 1 training using LIN_REG
+
+	Explained Variance = 0.70888879489336
+	Mean Absolute Error = 2.9579522403235115
+	Mean Squared Error = 320.0912309446419
+	Root Mean Squared Error = 17.89109362069971
+	R^2 = 0.0026269093208519667 
+
+	weights =
+	 [0.021720172082921672,-1.1818431890248862,0.17504772506488742,0.3418742235398811,-0.3874425051641975,1.8796528512812831,0.08171823190191657,-0.29778031606489797,0.0036766409412638135,0.6061602653120565,0.10174897088863802,0.17504772506488742,0.3418742235398811,1.2549356726298824] 
+
+	intercept = 1.9307275096818377 
+
+End of fold 1
+
+Duration of fold iteration 0:01:17.823993
+Duration of fold iteration 0:03:19.922659
+
+
+Starting fold 2
+Count = 1205671, start index 602836.0, stop index: 904254.0
+Results for fold = 2 training using LIN_REG
+
+	Explained Variance = 0.7143498360872051
+	Mean Absolute Error = 2.995967073035229
+	Mean Squared Error = 336.8814846165787
+	Root Mean Squared Error = 18.35433149467936
+	R^2 = 0.002540668680595992 
+
+	weights =
+	 [0.06653389675873388,-1.1999911691791834,0.2022130332009517,0.3446983890456031,-0.39745813776606126,1.857606688859192,0.06638032959202256,-0.313030603083628,-0.021198969966442008,0.6266454906400859,0.10065569067468505,0.2022130332009517,0.3446983890456031,1.2362259964875366] 
+
+	intercept = 1.9399830305112526 
+
+End of fold 2
+
+Duration of fold iteration 0:01:11.503840
+Duration of fold iteration 0:04:31.426517
+
+
+Starting fold 3
+Count = 1205671, start index 904254.0, stop index: 1205671.0
+Results for fold = 3 training using LIN_REG
+
+	Explained Variance = 0.7000312237461551
+	Mean Absolute Error = 2.951097262440374
+	Mean Squared Error = 303.1515606466857
+	Root Mean Squared Error = 17.411248107091165
+	R^2 = 0.0028387021200552143 
+
+	weights =
+	 [0.05802612937942487,-1.162835304029653,0.18338069864521278,0.270435220578989,-0.3803965409051546,1.8627857781740012,0.07016109866196488,-0.26110465717640957,0.0008454365311559976,0.6042607043214707,0.10373967760439531,0.18338069864521278,0.270435220578989,1.2983502637222812] 
+
+	intercept = 1.901557080504712 
+
+End of fold 3
+
+Duration of fold iteration 0:01:09.942466
+Duration of fold iteration 0:05:41.369002
+
+
+2023-12-13 15:16:41.838899 - C'est fini

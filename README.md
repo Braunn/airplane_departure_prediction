@@ -1,5 +1,6 @@
 ## AIRPORT DEPARTURE DELAY PREDICTION
 
+
 # Validating Model
 usage: validateModel.py [-h] [--master MASTER] [--N N] [--iter ITER]
                         [--regParam REGPARAM] [--data_set DATA_SET] [--K K]
@@ -52,3 +53,6 @@ generating pub key on cluster
 https://stackoverflow.com/questions/19660744/git-push-permission-denied-public-key
 adding to github 
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+
+# SLURM Related
+sbatch runs: https://github.com/neu-spiral/Discovery-Cluster/wiki/batch-mode

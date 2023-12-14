@@ -1,13 +1,14 @@
 import os
 import pandas as pd
 from datetime import datetime
+'''
 from sklearn.model_selection import train_test_split, cross_val_score, KFold
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error
-
+'''
 def filter_source_rows(df):
     return df[~df.apply(lambda row: row.astype(str).str.startswith(' SOURCE')).any(axis=1)]
 
@@ -17,7 +18,7 @@ if __name__ == "__main__":
     # CONCATENATING THE AIRPORTS DATASET
 
     # Put the path to the directory that contains the detailed departure statistics here
-    directory = "./data/raw/"
+    directory = "/scratch/wozny.c/project"
 
     print(datetime.now().strftime("%m/%d/%Y %H:%M:%S"),"- Concatenating airport departure statistics")
 
@@ -58,7 +59,7 @@ if __name__ == "__main__":
     df.to_csv(output_file_path, index=False, header=False)
 
     print(datetime.now().strftime("%m/%d/%Y %H:%M:%S"),"- Done writing weather data to file")
-
+    '''
     #SEPARATE THE DATE AND TIME IN THE STARTTIME AND ENDTIME COLUMNS 
     # Separate the date and time in the "StartTime(UTC)" column
     df['StartDate'] = pd.to_datetime(df['StartTime(UTC)']).dt.date
@@ -155,6 +156,7 @@ if __name__ == "__main__":
     # Evaluate the model on the test set
     mae_test = mean_absolute_error(y_test, y_pred)
     print(f'Mean Absolute Error (Test Set): {mae_test}')
+    '''
 
 
 

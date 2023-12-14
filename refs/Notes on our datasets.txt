@@ -20,3 +20,6 @@ W-1,Snow,Light,2016-01-06 23:14:00,2016-01-07 00:34:00,0.0,US/Mountain,K04V,38.0
 
 Airline code look up (split up into separate pages grouped alphabetically)
 https://en.wikipedia.org/wiki/Airline_codes
+
+Mean value for weather delay data_set (~8 million elements)
+0.5962020547482698

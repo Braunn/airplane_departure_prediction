@@ -1,0 +1,60 @@
+/var/spool/slurmd/job39854749/slurm_script: line 11: RUN_NUM: command not found
+/var/spool/slurmd/job39854749/slurm_script: line 16: data/output/run_/cpu_info_validation_run.txt: No such file or directory
+23/12/13 15:05:06 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 15:05:10 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 15:05:10 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 15:05:10 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 15:05:10 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 15:05:10 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 15:05:10 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 15:05:10 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 15:05:10 INFO Utils: Successfully started service 'sparkDriver' on port 34611.
+23/12/13 15:05:10 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 15:05:10 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 15:05:10 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 15:05:10 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 15:05:10 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-49a4e4c0-c228-467f-ac32-196aad4da467
+23/12/13 15:05:10 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 15:05:10 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 15:05:11 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 15:05:11 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0758:4040
+23/12/13 15:05:11 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 15:05:11 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 32977.
+23/12/13 15:05:11 INFO NettyBlockTransferService: Server created on c0758:32977
+23/12/13 15:05:11 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 15:05:11 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0758, 32977, None)
+23/12/13 15:05:11 INFO BlockManagerMasterEndpoint: Registering block manager c0758:32977 with 413.9 MB RAM, BlockManagerId(driver, c0758, 32977, None)
+23/12/13 15:05:11 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0758, 32977, None)
+23/12/13 15:05:11 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0758, 32977, None)
+23/12/13 15:07:09 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 15:07:09 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+23/12/13 15:09:54 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 15:09:57 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 15:09:57 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 15:09:58 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 15:09:58 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 15:09:58 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 15:09:58 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 15:09:58 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 15:09:58 INFO Utils: Successfully started service 'sparkDriver' on port 36622.
+23/12/13 15:09:58 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 15:09:58 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 15:09:58 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 15:09:58 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 15:09:58 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-cff2651c-21b7-47e1-9fdb-311451f83f38
+23/12/13 15:09:58 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 15:09:58 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 15:09:58 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 15:09:58 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0758:4040
+23/12/13 15:09:59 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 15:09:59 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42730.
+23/12/13 15:09:59 INFO NettyBlockTransferService: Server created on c0758:42730
+23/12/13 15:09:59 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 15:09:59 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0758, 42730, None)
+23/12/13 15:09:59 INFO BlockManagerMasterEndpoint: Registering block manager c0758:42730 with 413.9 MB RAM, BlockManagerId(driver, c0758, 42730, None)
+23/12/13 15:09:59 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0758, 42730, None)
+23/12/13 15:09:59 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0758, 42730, None)
+23/12/13 15:11:57 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 15:11:57 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS

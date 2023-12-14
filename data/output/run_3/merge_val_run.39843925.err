@@ -1,0 +1,407 @@
+23/12/13 00:13:40 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 00:13:44 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 00:13:44 INFO SparkContext: Submitted application: Airplane Departure Prediction
+23/12/13 00:13:44 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 00:13:44 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 00:13:44 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 00:13:44 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 00:13:44 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 00:13:44 INFO Utils: Successfully started service 'sparkDriver' on port 33287.
+23/12/13 00:13:44 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 00:13:44 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 00:13:44 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 00:13:44 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 00:13:45 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-6ba68a78-bab5-400e-bc47-220c240d2527
+23/12/13 00:13:45 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 00:13:45 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 00:13:45 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 00:13:45 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 00:13:45 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 00:13:45 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45751.
+23/12/13 00:13:45 INFO NettyBlockTransferService: Server created on c0753:45751
+23/12/13 00:13:45 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 00:13:45 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 45751, None)
+23/12/13 00:13:45 INFO BlockManagerMasterEndpoint: Registering block manager c0753:45751 with 413.9 MB RAM, BlockManagerId(driver, c0753, 45751, None)
+23/12/13 00:13:45 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 45751, None)
+23/12/13 00:13:45 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 45751, None)
+/var/spool/slurmd/job39843925/slurm_script: line 13: RUN_NUM: command not found
+/var/spool/slurmd/job39843925/slurm_script: line 18: data/output/run_/cpu_info_validation_run.txt: No such file or directory
+23/12/13 01:36:57 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 01:37:00 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 01:37:00 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 01:37:00 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 01:37:00 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 01:37:00 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 01:37:00 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 01:37:00 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 01:37:01 INFO Utils: Successfully started service 'sparkDriver' on port 33685.
+23/12/13 01:37:01 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 01:37:01 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 01:37:01 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 01:37:01 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 01:37:01 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-19c79799-534a-48f4-a776-ef56af61eaec
+23/12/13 01:37:01 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 01:37:01 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 01:37:01 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 01:37:01 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 01:37:01 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 01:37:01 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37020.
+23/12/13 01:37:01 INFO NettyBlockTransferService: Server created on c0753:37020
+23/12/13 01:37:01 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 01:37:01 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 37020, None)
+23/12/13 01:37:01 INFO BlockManagerMasterEndpoint: Registering block manager c0753:37020 with 413.9 MB RAM, BlockManagerId(driver, c0753, 37020, None)
+23/12/13 01:37:01 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 37020, None)
+23/12/13 01:37:01 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 37020, None)
+23/12/13 01:37:05 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 01:37:07 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 01:37:07 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 01:37:07 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 01:37:07 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 01:37:07 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 01:37:07 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 01:37:07 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 01:37:08 INFO Utils: Successfully started service 'sparkDriver' on port 35916.
+23/12/13 01:37:08 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 01:37:08 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 01:37:08 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 01:37:08 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 01:37:08 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-b495821d-79ab-416d-9d1f-81df0e28803c
+23/12/13 01:37:08 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 01:37:08 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 01:37:08 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 01:37:08 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 01:37:08 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 01:37:09 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40308.
+23/12/13 01:37:09 INFO NettyBlockTransferService: Server created on c0753:40308
+23/12/13 01:37:09 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 01:37:09 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 40308, None)
+23/12/13 01:37:09 INFO BlockManagerMasterEndpoint: Registering block manager c0753:40308 with 413.9 MB RAM, BlockManagerId(driver, c0753, 40308, None)
+23/12/13 01:37:09 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 40308, None)
+23/12/13 01:37:09 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 40308, None)
+23/12/13 01:37:12 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 01:37:14 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 01:37:14 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 01:37:14 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 01:37:14 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 01:37:14 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 01:37:14 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 01:37:14 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 01:37:15 INFO Utils: Successfully started service 'sparkDriver' on port 34846.
+23/12/13 01:37:15 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 01:37:15 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 01:37:15 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 01:37:15 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 01:37:15 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-ce8d1fb3-3bfc-4143-a4f9-9501d075c0d1
+23/12/13 01:37:15 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 01:37:15 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 01:37:15 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 01:37:15 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 01:37:15 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 01:37:16 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44930.
+23/12/13 01:37:16 INFO NettyBlockTransferService: Server created on c0753:44930
+23/12/13 01:37:16 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 01:37:16 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 44930, None)
+23/12/13 01:37:16 INFO BlockManagerMasterEndpoint: Registering block manager c0753:44930 with 413.9 MB RAM, BlockManagerId(driver, c0753, 44930, None)
+23/12/13 01:37:16 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 44930, None)
+23/12/13 01:37:16 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 44930, None)
+23/12/13 01:37:19 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 01:37:21 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 01:37:21 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 01:37:21 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 01:37:21 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 01:37:21 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 01:37:21 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 01:37:21 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 01:37:22 INFO Utils: Successfully started service 'sparkDriver' on port 43824.
+23/12/13 01:37:22 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 01:37:22 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 01:37:22 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 01:37:22 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 01:37:22 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-8f712cff-0d38-4942-995a-ff53d4356064
+23/12/13 01:37:22 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 01:37:22 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 01:37:22 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 01:37:22 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 01:37:23 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 01:37:23 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 32919.
+23/12/13 01:37:23 INFO NettyBlockTransferService: Server created on c0753:32919
+23/12/13 01:37:23 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 01:37:23 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 32919, None)
+23/12/13 01:37:23 INFO BlockManagerMasterEndpoint: Registering block manager c0753:32919 with 413.9 MB RAM, BlockManagerId(driver, c0753, 32919, None)
+23/12/13 01:37:23 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 32919, None)
+23/12/13 01:37:23 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 32919, None)
+23/12/13 01:37:27 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 01:37:30 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 01:37:30 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 01:37:30 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 01:37:30 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 01:37:30 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 01:37:30 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 01:37:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 01:37:30 INFO Utils: Successfully started service 'sparkDriver' on port 41338.
+23/12/13 01:37:30 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 01:37:30 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 01:37:30 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 01:37:30 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 01:37:30 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-f05e2fb2-3d86-40b6-b14b-4922ed0796e8
+23/12/13 01:37:30 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 01:37:30 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 01:37:30 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 01:37:31 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 01:37:31 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 01:37:31 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40492.
+23/12/13 01:37:31 INFO NettyBlockTransferService: Server created on c0753:40492
+23/12/13 01:37:31 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 01:37:31 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 40492, None)
+23/12/13 01:37:31 INFO BlockManagerMasterEndpoint: Registering block manager c0753:40492 with 413.9 MB RAM, BlockManagerId(driver, c0753, 40492, None)
+23/12/13 01:37:31 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 40492, None)
+23/12/13 01:37:31 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 40492, None)
+23/12/13 01:37:35 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 01:37:37 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 01:37:37 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 01:37:37 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 01:37:37 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 01:37:37 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 01:37:37 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 01:37:37 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 01:37:38 INFO Utils: Successfully started service 'sparkDriver' on port 40325.
+23/12/13 01:37:38 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 01:37:38 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 01:37:38 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 01:37:38 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 01:37:38 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-5093977f-352d-42f6-8e07-9586f0cf867b
+23/12/13 01:37:38 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 01:37:38 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 01:37:38 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 01:37:38 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 01:37:38 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 01:37:38 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37888.
+23/12/13 01:37:38 INFO NettyBlockTransferService: Server created on c0753:37888
+23/12/13 01:37:38 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 01:37:38 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 37888, None)
+23/12/13 01:37:38 INFO BlockManagerMasterEndpoint: Registering block manager c0753:37888 with 413.9 MB RAM, BlockManagerId(driver, c0753, 37888, None)
+23/12/13 01:37:38 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 37888, None)
+23/12/13 01:37:38 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 37888, None)
+23/12/13 01:37:42 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 01:37:44 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 01:37:44 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 01:37:44 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 01:37:44 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 01:37:44 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 01:37:44 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 01:37:44 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 01:37:45 INFO Utils: Successfully started service 'sparkDriver' on port 39179.
+23/12/13 01:37:45 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 01:37:45 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 01:37:45 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 01:37:45 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 01:37:45 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-a5096fe9-5636-4a28-ad22-54940bf95ff3
+23/12/13 01:37:45 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 01:37:45 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 01:37:45 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 01:37:45 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 01:37:45 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 01:37:45 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37073.
+23/12/13 01:37:45 INFO NettyBlockTransferService: Server created on c0753:37073
+23/12/13 01:37:45 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 01:37:45 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 37073, None)
+23/12/13 01:37:45 INFO BlockManagerMasterEndpoint: Registering block manager c0753:37073 with 413.9 MB RAM, BlockManagerId(driver, c0753, 37073, None)
+23/12/13 01:37:45 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 37073, None)
+23/12/13 01:37:45 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 37073, None)
+23/12/13 01:37:49 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 01:37:51 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 01:37:51 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 01:37:51 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 01:37:51 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 01:37:51 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 01:37:51 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 01:37:51 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 01:37:51 INFO Utils: Successfully started service 'sparkDriver' on port 39715.
+23/12/13 01:37:52 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 01:37:52 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 01:37:52 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 01:37:52 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 01:37:52 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-19f1f49a-dbaa-4fbd-b109-b529f0c7a8cd
+23/12/13 01:37:52 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 01:37:52 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 01:37:52 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 01:37:52 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 01:37:52 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 01:37:52 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 32929.
+23/12/13 01:37:52 INFO NettyBlockTransferService: Server created on c0753:32929
+23/12/13 01:37:52 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 01:37:52 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 32929, None)
+23/12/13 01:37:52 INFO BlockManagerMasterEndpoint: Registering block manager c0753:32929 with 413.9 MB RAM, BlockManagerId(driver, c0753, 32929, None)
+23/12/13 01:37:52 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 32929, None)
+23/12/13 01:37:52 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 32929, None)
+23/12/13 01:37:57 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 01:38:01 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 01:38:01 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 01:38:01 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 01:38:01 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 01:38:01 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 01:38:01 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 01:38:01 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 01:38:01 INFO Utils: Successfully started service 'sparkDriver' on port 42721.
+23/12/13 01:38:01 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 01:38:01 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 01:38:01 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 01:38:01 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 01:38:01 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-b4f37012-0d20-4c93-ab33-e3ac5909eec3
+23/12/13 01:38:01 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 01:38:01 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 01:38:02 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 01:38:02 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 01:38:02 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 01:38:02 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40093.
+23/12/13 01:38:02 INFO NettyBlockTransferService: Server created on c0753:40093
+23/12/13 01:38:02 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 01:38:02 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 40093, None)
+23/12/13 01:38:02 INFO BlockManagerMasterEndpoint: Registering block manager c0753:40093 with 413.9 MB RAM, BlockManagerId(driver, c0753, 40093, None)
+23/12/13 01:38:02 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 40093, None)
+23/12/13 01:38:02 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 40093, None)
+23/12/13 01:38:06 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 01:38:08 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 01:38:08 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 01:38:08 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 01:38:08 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 01:38:08 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 01:38:08 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 01:38:08 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 01:38:08 INFO Utils: Successfully started service 'sparkDriver' on port 37674.
+23/12/13 01:38:09 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 01:38:09 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 01:38:09 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 01:38:09 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 01:38:09 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-314e0e1e-52ec-4974-a2df-cc2a7e2b1f58
+23/12/13 01:38:09 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 01:38:09 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 01:38:09 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 01:38:09 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 01:38:09 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 01:38:09 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34710.
+23/12/13 01:38:09 INFO NettyBlockTransferService: Server created on c0753:34710
+23/12/13 01:38:09 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 01:38:09 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 34710, None)
+23/12/13 01:38:09 INFO BlockManagerMasterEndpoint: Registering block manager c0753:34710 with 413.9 MB RAM, BlockManagerId(driver, c0753, 34710, None)
+23/12/13 01:38:09 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 34710, None)
+23/12/13 01:38:09 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 34710, None)
+23/12/13 01:38:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 01:38:15 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 01:38:15 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 01:38:15 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 01:38:15 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 01:38:15 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 01:38:15 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 01:38:15 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 01:38:16 INFO Utils: Successfully started service 'sparkDriver' on port 34734.
+23/12/13 01:38:16 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 01:38:16 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 01:38:16 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 01:38:16 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 01:38:16 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-1eb1fc1b-e7ba-4f0f-8999-69e3f6e4af18
+23/12/13 01:38:16 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 01:38:16 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 01:38:16 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 01:38:16 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 01:38:16 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 01:38:16 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38675.
+23/12/13 01:38:16 INFO NettyBlockTransferService: Server created on c0753:38675
+23/12/13 01:38:16 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 01:38:17 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 38675, None)
+23/12/13 01:38:17 INFO BlockManagerMasterEndpoint: Registering block manager c0753:38675 with 413.9 MB RAM, BlockManagerId(driver, c0753, 38675, None)
+23/12/13 01:38:17 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 38675, None)
+23/12/13 01:38:17 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 38675, None)
+23/12/13 01:38:20 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 01:38:23 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 01:38:23 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 01:38:23 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 01:38:23 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 01:38:23 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 01:38:23 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 01:38:23 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 01:38:23 INFO Utils: Successfully started service 'sparkDriver' on port 41159.
+23/12/13 01:38:23 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 01:38:23 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 01:38:23 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 01:38:23 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 01:38:23 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-354e31be-9472-46ca-9cbb-18b3c911508b
+23/12/13 01:38:23 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 01:38:23 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 01:38:24 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 01:38:24 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 01:38:24 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 01:38:24 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36704.
+23/12/13 01:38:24 INFO NettyBlockTransferService: Server created on c0753:36704
+23/12/13 01:38:24 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 01:38:24 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 36704, None)
+23/12/13 01:38:24 INFO BlockManagerMasterEndpoint: Registering block manager c0753:36704 with 413.9 MB RAM, BlockManagerId(driver, c0753, 36704, None)
+23/12/13 01:38:24 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 36704, None)
+23/12/13 01:38:24 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 36704, None)
+23/12/13 01:38:28 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 01:38:30 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 01:38:30 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 01:38:30 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 01:38:30 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 01:38:30 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 01:38:30 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 01:38:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 01:38:31 INFO Utils: Successfully started service 'sparkDriver' on port 45248.
+23/12/13 01:38:31 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 01:38:31 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 01:38:31 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 01:38:31 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 01:38:31 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-102a2022-f9ae-4766-8f23-d4f1646cedfc
+23/12/13 01:38:31 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 01:38:31 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 01:38:31 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 01:38:31 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 01:38:31 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 01:38:31 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35772.
+23/12/13 01:38:31 INFO NettyBlockTransferService: Server created on c0753:35772
+23/12/13 01:38:31 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 01:38:31 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 35772, None)
+23/12/13 01:38:31 INFO BlockManagerMasterEndpoint: Registering block manager c0753:35772 with 413.9 MB RAM, BlockManagerId(driver, c0753, 35772, None)
+23/12/13 01:38:31 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 35772, None)
+23/12/13 01:38:31 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 35772, None)
+23/12/13 01:38:35 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 01:38:37 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 01:38:38 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 01:38:38 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 01:38:38 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 01:38:38 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 01:38:38 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 01:38:38 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 01:38:38 INFO Utils: Successfully started service 'sparkDriver' on port 33632.
+23/12/13 01:38:38 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 01:38:38 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 01:38:38 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 01:38:38 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 01:38:38 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-ece6668f-e6e8-4717-b858-fa4917bb5fbc
+23/12/13 01:38:38 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 01:38:38 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 01:38:38 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 01:38:38 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 01:38:39 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 01:38:39 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43322.
+23/12/13 01:38:39 INFO NettyBlockTransferService: Server created on c0753:43322
+23/12/13 01:38:39 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 01:38:39 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 43322, None)
+23/12/13 01:38:39 INFO BlockManagerMasterEndpoint: Registering block manager c0753:43322 with 413.9 MB RAM, BlockManagerId(driver, c0753, 43322, None)
+23/12/13 01:38:39 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 43322, None)
+23/12/13 01:38:39 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 43322, None)

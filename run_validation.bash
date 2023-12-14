@@ -1,33 +1,34 @@
 #!/bin/bash
 
-DATA_SET_PATH="/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set"
+#SBATCH --job-name=merge_validation_run                 # sets the job name
+#SBATCH --nodes=1                                 # reserves 5 machines
+#SBATCH --mem=100Gb                               # reserves 100 GB memory
+#SBATCH --partition=courses                       # requests that the job is executed in partition my partition
+#SBATCH --time=3:00:00                            # reserves machines/cores for 4 hours.
+#SBATCH --output=data/output/run_3/val_run_small.%j.out               # sets the standard output to be stored in file my_nice_job.%j.out, where %j is the job id)
+#SBATCH --error=data/output/run_3/val_run_small.%j.err                # sets the standard error to be stored in file my_nice_job.%j.err, where %j is the job id)
+
+RUN_NUM = 3
+
+DATA_SET_PATH="/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final"
 echo $DATA_SET_PATH
 
-lscpu > cpu_info_validation_run.txt
-
-# LASSO REGRESSION MODEL
-for lam in 0.01 0.1 1 100 1000 10000;
-do spark-submit validateModel.py --master local[30] --N 30 \
-                              --regParam $lam \
-                              --data_set $DATA_SET_PATH \
-                              --K 4 --type LASSO_REG --seed 5 --intercept 1 >> lasso_regression_output.txt
-done
+lscpu > data/output/run_$RUN_NUM/cpu_info_validation_run.txt
 
 # RIDGE REGRESSION MODEL
-for lam in 0.01 0.1 1 100 1000 10000;
-do spark-submit validateModel.py --master local[30] --N 30 \
+for lam in 0.0001 0.001;
+do spark-submit validateModel.py --master local[35] --N 35 \
                               --regParam $lam \
                               --data_set $DATA_SET_PATH \
-                              --K 4 --type RIDGE_REG --seed 5 --intercept 1 >> ridge_regression_output.txt
+                              --K 4 --type RIDGE_REG --seed 5 --intercept 1 
 done
 
-# LINEAR REGRESSION MODEL
-spark-submit validateModel.py --master local[30] --N 30 \
-                              --regParam 0 \
+# LASSO REGRESSION MODEL
+for lam in 0.0001 0.001;
+do spark-submit validateModel.py --master local[35] --N 35 \
+                              --regParam $lam \
                               --data_set $DATA_SET_PATH \
-                              --K 4 --type LIN_REG --seed 5 --intercept 1 >> linear_regression_w_intercept.txt
+                              --K 4 --type LASSO_REG --seed 5 --intercept 1 
+done
 
-spark-submit validateModel.py --master local[30] --N 30 \
-                              --regParam 0 \
-                              --data_set $DATA_SET_PATH \
-                              --K 4 --type LIN_REG --seed 5 --intercept 0 >> linear_regression_wo_intercept.txt
+

@@ -1,0 +1,817 @@
+Starting runRDD using N=35, weather data =data/processed/cleaned_weather_data.csv, and departure data data/processed/concatenated_data.csv
+
+Start time = 2023-12-13 00:13:46.150884
+
+
+Departure RDD cached. Elapsed time 0:04:04.472901
+
+
+Weather RDD cached. Elapsed time 0:03:32.738420
+
+
+Weather mapping cached. Elapsed time 0:00:00.069253
+
+
+Mapping created. Elapsed time 0:00:00.046289
+
+
+Prepped weatherRDD for join. Elapsed time 0:00:00.072928
+
+
+STARTING LARGE JOIN
+
+data_set.count() = 1205671 
+
+data_set.takeSample(False, 5) =
+ [(0.0, ('LAX', datetime.datetime(2017, 12, 26, 10, 0), 'Fog', 'Severe', 0.0)), (0.0, ('LAX', datetime.datetime(2021, 12, 23, 14, 45), 'Rain', 'Light', 0.0)), (0.0, ('DEN', datetime.datetime(2018, 5, 3, 5, 10), 'Rain', 'Light', 0.08)), (0.0, ('MCO', datetime.datetime(2021, 10, 29, 22, 3), 'Rain', 'Light', 0.01)), (0.0, ('FLL', datetime.datetime(2017, 8, 11, 16, 40), 'Rain', 'Light', 0.0))] 
+
+Finished final join! Elapsed time 1:15:19.835800
+
+
+Finished saving runRDD. Total time from 2023-12-13 00:13:46.150884 to 2023-12-13 01:36:53.351659 is 1:23:07.200775
+
+/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 0.01
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+Traceback (most recent call last):
+  File "/scratch/augenbraun.n/airplane_departure_prediction/validateModel.py", line 122, in <module>
+    trainRDD = readRDD(sc, args.data_set)
+  File "/scratch/augenbraun.n/airplane_departure_prediction/runRDD.py", line 213, in readRDD
+    loaded = sc.sequenceFile(name)\
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 712, in sequenceFile
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.sequenceFile.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:287)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:229)
+	at org.apache.hadoop.mapred.SequenceFileInputFormat.listStatus(SequenceFileInputFormat.java:45)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:315)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:204)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1388)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:385)
+	at org.apache.spark.rdd.RDD.take(RDD.scala:1382)
+	at org.apache.spark.api.python.SerDeUtil$.pairRDDToPython(SerDeUtil.scala:239)
+	at org.apache.spark.api.python.PythonRDD$.sequenceFile(PythonRDD.scala:250)
+	at org.apache.spark.api.python.PythonRDD.sequenceFile(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 0.1
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+Traceback (most recent call last):
+  File "/scratch/augenbraun.n/airplane_departure_prediction/validateModel.py", line 122, in <module>
+    trainRDD = readRDD(sc, args.data_set)
+  File "/scratch/augenbraun.n/airplane_departure_prediction/runRDD.py", line 213, in readRDD
+    loaded = sc.sequenceFile(name)\
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 712, in sequenceFile
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.sequenceFile.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:287)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:229)
+	at org.apache.hadoop.mapred.SequenceFileInputFormat.listStatus(SequenceFileInputFormat.java:45)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:315)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:204)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1388)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:385)
+	at org.apache.spark.rdd.RDD.take(RDD.scala:1382)
+	at org.apache.spark.api.python.SerDeUtil$.pairRDDToPython(SerDeUtil.scala:239)
+	at org.apache.spark.api.python.PythonRDD$.sequenceFile(PythonRDD.scala:250)
+	at org.apache.spark.api.python.PythonRDD.sequenceFile(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 1.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+Traceback (most recent call last):
+  File "/scratch/augenbraun.n/airplane_departure_prediction/validateModel.py", line 122, in <module>
+    trainRDD = readRDD(sc, args.data_set)
+  File "/scratch/augenbraun.n/airplane_departure_prediction/runRDD.py", line 213, in readRDD
+    loaded = sc.sequenceFile(name)\
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 712, in sequenceFile
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.sequenceFile.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:287)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:229)
+	at org.apache.hadoop.mapred.SequenceFileInputFormat.listStatus(SequenceFileInputFormat.java:45)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:315)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:204)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1388)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:385)
+	at org.apache.spark.rdd.RDD.take(RDD.scala:1382)
+	at org.apache.spark.api.python.SerDeUtil$.pairRDDToPython(SerDeUtil.scala:239)
+	at org.apache.spark.api.python.PythonRDD$.sequenceFile(PythonRDD.scala:250)
+	at org.apache.spark.api.python.PythonRDD.sequenceFile(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 100.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+Traceback (most recent call last):
+  File "/scratch/augenbraun.n/airplane_departure_prediction/validateModel.py", line 122, in <module>
+    trainRDD = readRDD(sc, args.data_set)
+  File "/scratch/augenbraun.n/airplane_departure_prediction/runRDD.py", line 213, in readRDD
+    loaded = sc.sequenceFile(name)\
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 712, in sequenceFile
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.sequenceFile.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:287)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:229)
+	at org.apache.hadoop.mapred.SequenceFileInputFormat.listStatus(SequenceFileInputFormat.java:45)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:315)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:204)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1388)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:385)
+	at org.apache.spark.rdd.RDD.take(RDD.scala:1382)
+	at org.apache.spark.api.python.SerDeUtil$.pairRDDToPython(SerDeUtil.scala:239)
+	at org.apache.spark.api.python.PythonRDD$.sequenceFile(PythonRDD.scala:250)
+	at org.apache.spark.api.python.PythonRDD.sequenceFile(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 1000.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+Traceback (most recent call last):
+  File "/scratch/augenbraun.n/airplane_departure_prediction/validateModel.py", line 122, in <module>
+    trainRDD = readRDD(sc, args.data_set)
+  File "/scratch/augenbraun.n/airplane_departure_prediction/runRDD.py", line 213, in readRDD
+    loaded = sc.sequenceFile(name)\
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 712, in sequenceFile
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.sequenceFile.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:287)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:229)
+	at org.apache.hadoop.mapred.SequenceFileInputFormat.listStatus(SequenceFileInputFormat.java:45)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:315)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:204)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1388)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:385)
+	at org.apache.spark.rdd.RDD.take(RDD.scala:1382)
+	at org.apache.spark.api.python.SerDeUtil$.pairRDDToPython(SerDeUtil.scala:239)
+	at org.apache.spark.api.python.PythonRDD$.sequenceFile(PythonRDD.scala:250)
+	at org.apache.spark.api.python.PythonRDD.sequenceFile(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 10000.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LASSO_REG
+	--seed 5
+	--intercept True
+
+
+Traceback (most recent call last):
+  File "/scratch/augenbraun.n/airplane_departure_prediction/validateModel.py", line 122, in <module>
+    trainRDD = readRDD(sc, args.data_set)
+  File "/scratch/augenbraun.n/airplane_departure_prediction/runRDD.py", line 213, in readRDD
+    loaded = sc.sequenceFile(name)\
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 712, in sequenceFile
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.sequenceFile.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:287)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:229)
+	at org.apache.hadoop.mapred.SequenceFileInputFormat.listStatus(SequenceFileInputFormat.java:45)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:315)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:204)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1388)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:385)
+	at org.apache.spark.rdd.RDD.take(RDD.scala:1382)
+	at org.apache.spark.api.python.SerDeUtil$.pairRDDToPython(SerDeUtil.scala:239)
+	at org.apache.spark.api.python.PythonRDD$.sequenceFile(PythonRDD.scala:250)
+	at org.apache.spark.api.python.PythonRDD.sequenceFile(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 0.01
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type RIDGE_REG
+	--seed 5
+	--intercept True
+
+
+Traceback (most recent call last):
+  File "/scratch/augenbraun.n/airplane_departure_prediction/validateModel.py", line 122, in <module>
+    trainRDD = readRDD(sc, args.data_set)
+  File "/scratch/augenbraun.n/airplane_departure_prediction/runRDD.py", line 213, in readRDD
+    loaded = sc.sequenceFile(name)\
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 712, in sequenceFile
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.sequenceFile.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:287)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:229)
+	at org.apache.hadoop.mapred.SequenceFileInputFormat.listStatus(SequenceFileInputFormat.java:45)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:315)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:204)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1388)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:385)
+	at org.apache.spark.rdd.RDD.take(RDD.scala:1382)
+	at org.apache.spark.api.python.SerDeUtil$.pairRDDToPython(SerDeUtil.scala:239)
+	at org.apache.spark.api.python.PythonRDD$.sequenceFile(PythonRDD.scala:250)
+	at org.apache.spark.api.python.PythonRDD.sequenceFile(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 0.1
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type RIDGE_REG
+	--seed 5
+	--intercept True
+
+
+Traceback (most recent call last):
+  File "/scratch/augenbraun.n/airplane_departure_prediction/validateModel.py", line 122, in <module>
+    trainRDD = readRDD(sc, args.data_set)
+  File "/scratch/augenbraun.n/airplane_departure_prediction/runRDD.py", line 213, in readRDD
+    loaded = sc.sequenceFile(name)\
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 712, in sequenceFile
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.sequenceFile.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:287)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:229)
+	at org.apache.hadoop.mapred.SequenceFileInputFormat.listStatus(SequenceFileInputFormat.java:45)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:315)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:204)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1388)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:385)
+	at org.apache.spark.rdd.RDD.take(RDD.scala:1382)
+	at org.apache.spark.api.python.SerDeUtil$.pairRDDToPython(SerDeUtil.scala:239)
+	at org.apache.spark.api.python.PythonRDD$.sequenceFile(PythonRDD.scala:250)
+	at org.apache.spark.api.python.PythonRDD.sequenceFile(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 1.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type RIDGE_REG
+	--seed 5
+	--intercept True
+
+
+Traceback (most recent call last):
+  File "/scratch/augenbraun.n/airplane_departure_prediction/validateModel.py", line 122, in <module>
+    trainRDD = readRDD(sc, args.data_set)
+  File "/scratch/augenbraun.n/airplane_departure_prediction/runRDD.py", line 213, in readRDD
+    loaded = sc.sequenceFile(name)\
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 712, in sequenceFile
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.sequenceFile.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:287)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:229)
+	at org.apache.hadoop.mapred.SequenceFileInputFormat.listStatus(SequenceFileInputFormat.java:45)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:315)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:204)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1388)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:385)
+	at org.apache.spark.rdd.RDD.take(RDD.scala:1382)
+	at org.apache.spark.api.python.SerDeUtil$.pairRDDToPython(SerDeUtil.scala:239)
+	at org.apache.spark.api.python.PythonRDD$.sequenceFile(PythonRDD.scala:250)
+	at org.apache.spark.api.python.PythonRDD.sequenceFile(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 100.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type RIDGE_REG
+	--seed 5
+	--intercept True
+
+
+Traceback (most recent call last):
+  File "/scratch/augenbraun.n/airplane_departure_prediction/validateModel.py", line 122, in <module>
+    trainRDD = readRDD(sc, args.data_set)
+  File "/scratch/augenbraun.n/airplane_departure_prediction/runRDD.py", line 213, in readRDD
+    loaded = sc.sequenceFile(name)\
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 712, in sequenceFile
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.sequenceFile.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:287)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:229)
+	at org.apache.hadoop.mapred.SequenceFileInputFormat.listStatus(SequenceFileInputFormat.java:45)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:315)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:204)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1388)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:385)
+	at org.apache.spark.rdd.RDD.take(RDD.scala:1382)
+	at org.apache.spark.api.python.SerDeUtil$.pairRDDToPython(SerDeUtil.scala:239)
+	at org.apache.spark.api.python.PythonRDD$.sequenceFile(PythonRDD.scala:250)
+	at org.apache.spark.api.python.PythonRDD.sequenceFile(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 1000.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type RIDGE_REG
+	--seed 5
+	--intercept True
+
+
+Traceback (most recent call last):
+  File "/scratch/augenbraun.n/airplane_departure_prediction/validateModel.py", line 122, in <module>
+    trainRDD = readRDD(sc, args.data_set)
+  File "/scratch/augenbraun.n/airplane_departure_prediction/runRDD.py", line 213, in readRDD
+    loaded = sc.sequenceFile(name)\
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 712, in sequenceFile
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.sequenceFile.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:287)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:229)
+	at org.apache.hadoop.mapred.SequenceFileInputFormat.listStatus(SequenceFileInputFormat.java:45)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:315)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:204)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1388)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:385)
+	at org.apache.spark.rdd.RDD.take(RDD.scala:1382)
+	at org.apache.spark.api.python.SerDeUtil$.pairRDDToPython(SerDeUtil.scala:239)
+	at org.apache.spark.api.python.PythonRDD$.sequenceFile(PythonRDD.scala:250)
+	at org.apache.spark.api.python.PythonRDD.sequenceFile(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 10000.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type RIDGE_REG
+	--seed 5
+	--intercept True
+
+
+Traceback (most recent call last):
+  File "/scratch/augenbraun.n/airplane_departure_prediction/validateModel.py", line 122, in <module>
+    trainRDD = readRDD(sc, args.data_set)
+  File "/scratch/augenbraun.n/airplane_departure_prediction/runRDD.py", line 213, in readRDD
+    loaded = sc.sequenceFile(name)\
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 712, in sequenceFile
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.sequenceFile.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:287)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:229)
+	at org.apache.hadoop.mapred.SequenceFileInputFormat.listStatus(SequenceFileInputFormat.java:45)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:315)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:204)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1388)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:385)
+	at org.apache.spark.rdd.RDD.take(RDD.scala:1382)
+	at org.apache.spark.api.python.SerDeUtil$.pairRDDToPython(SerDeUtil.scala:239)
+	at org.apache.spark.api.python.PythonRDD$.sequenceFile(PythonRDD.scala:250)
+	at org.apache.spark.api.python.PythonRDD.sequenceFile(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 0.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LIN_REG
+	--seed 5
+	--intercept True
+
+
+Traceback (most recent call last):
+  File "/scratch/augenbraun.n/airplane_departure_prediction/validateModel.py", line 122, in <module>
+    trainRDD = readRDD(sc, args.data_set)
+  File "/scratch/augenbraun.n/airplane_departure_prediction/runRDD.py", line 213, in readRDD
+    loaded = sc.sequenceFile(name)\
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 712, in sequenceFile
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.sequenceFile.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:287)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:229)
+	at org.apache.hadoop.mapred.SequenceFileInputFormat.listStatus(SequenceFileInputFormat.java:45)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:315)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:204)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1388)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:385)
+	at org.apache.spark.rdd.RDD.take(RDD.scala:1382)
+	at org.apache.spark.api.python.SerDeUtil$.pairRDDToPython(SerDeUtil.scala:239)
+	at org.apache.spark.api.python.PythonRDD$.sequenceFile(PythonRDD.scala:250)
+	at org.apache.spark.api.python.PythonRDD.sequenceFile(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+
+Command line arguments:
+	--master local[35]
+	--N 35
+	--iter 10000
+	--regParam 0.0
+	--data_set /scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	--K 4
+	--type LIN_REG
+	--seed 5
+	--intercept True
+
+
+Traceback (most recent call last):
+  File "/scratch/augenbraun.n/airplane_departure_prediction/validateModel.py", line 122, in <module>
+    trainRDD = readRDD(sc, args.data_set)
+  File "/scratch/augenbraun.n/airplane_departure_prediction/runRDD.py", line 213, in readRDD
+    loaded = sc.sequenceFile(name)\
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 712, in sequenceFile
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/shared/centos7/spark/2.4.5-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.sequenceFile.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/scratch/augenbraun.n/airplane_departure_prediction/data/processed/data_set_final
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:287)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:229)
+	at org.apache.hadoop.mapred.SequenceFileInputFormat.listStatus(SequenceFileInputFormat.java:45)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:315)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:204)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1388)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:385)
+	at org.apache.spark.rdd.RDD.take(RDD.scala:1382)
+	at org.apache.spark.api.python.SerDeUtil$.pairRDDToPython(SerDeUtil.scala:239)
+	at org.apache.spark.api.python.PythonRDD$.sequenceFile(PythonRDD.scala:250)
+	at org.apache.spark.api.python.PythonRDD.sequenceFile(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+

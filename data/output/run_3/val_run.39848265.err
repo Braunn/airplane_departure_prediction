@@ -1,0 +1,607 @@
+/var/spool/slurmd/job39848265/slurm_script: line 11: RUN_NUM: command not found
+/var/spool/slurmd/job39848265/slurm_script: line 16: data/output/run_/cpu_info_validation_run.txt: No such file or directory
+23/12/13 07:35:11 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 07:35:15 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 07:35:15 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 07:35:15 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 07:35:15 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 07:35:15 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 07:35:15 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 07:35:15 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 07:35:15 INFO Utils: Successfully started service 'sparkDriver' on port 43936.
+23/12/13 07:35:15 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 07:35:15 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 07:35:15 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 07:35:15 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 07:35:15 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-d31f42c1-9dbc-41d1-acad-0e04a1c04e8e
+23/12/13 07:35:16 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 07:35:16 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 07:35:16 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 07:35:16 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 07:35:16 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 07:35:16 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35785.
+23/12/13 07:35:16 INFO NettyBlockTransferService: Server created on c0753:35785
+23/12/13 07:35:16 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 07:35:16 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 35785, None)
+23/12/13 07:35:16 INFO BlockManagerMasterEndpoint: Registering block manager c0753:35785 with 413.9 MB RAM, BlockManagerId(driver, c0753, 35785, None)
+23/12/13 07:35:16 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 35785, None)
+23/12/13 07:35:16 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 35785, None)
+23/12/13 07:37:15 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 07:37:15 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+23/12/13 07:41:48 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 07:41:51 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 07:41:51 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 07:41:51 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 07:41:51 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 07:41:51 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 07:41:51 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 07:41:51 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 07:41:52 INFO Utils: Successfully started service 'sparkDriver' on port 35385.
+23/12/13 07:41:52 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 07:41:52 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 07:41:52 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 07:41:52 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 07:41:52 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-55e1d1e5-069c-4926-ac72-c10d394c1130
+23/12/13 07:41:52 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 07:41:52 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 07:41:52 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 07:41:52 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 07:41:53 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 07:41:53 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35975.
+23/12/13 07:41:53 INFO NettyBlockTransferService: Server created on c0753:35975
+23/12/13 07:41:53 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 07:41:53 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 35975, None)
+23/12/13 07:41:53 INFO BlockManagerMasterEndpoint: Registering block manager c0753:35975 with 413.9 MB RAM, BlockManagerId(driver, c0753, 35975, None)
+23/12/13 07:41:53 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 35975, None)
+23/12/13 07:41:53 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 35975, None)
+23/12/13 07:43:52 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 07:43:52 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+23/12/13 07:48:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 07:48:55 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 07:48:55 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 07:48:55 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 07:48:55 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 07:48:55 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 07:48:55 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 07:48:55 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 07:48:55 INFO Utils: Successfully started service 'sparkDriver' on port 33672.
+23/12/13 07:48:56 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 07:48:56 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 07:48:56 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 07:48:56 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 07:48:56 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-780e1e10-42a8-4acc-abea-57c6f7181d61
+23/12/13 07:48:56 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 07:48:56 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 07:48:56 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 07:48:56 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 07:48:56 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 07:48:56 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42822.
+23/12/13 07:48:56 INFO NettyBlockTransferService: Server created on c0753:42822
+23/12/13 07:48:56 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 07:48:56 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 42822, None)
+23/12/13 07:48:56 INFO BlockManagerMasterEndpoint: Registering block manager c0753:42822 with 413.9 MB RAM, BlockManagerId(driver, c0753, 42822, None)
+23/12/13 07:48:56 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 42822, None)
+23/12/13 07:48:56 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 42822, None)
+23/12/13 07:50:55 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 07:50:55 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+23/12/13 07:53:38 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 07:53:41 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 07:53:41 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 07:53:41 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 07:53:41 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 07:53:41 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 07:53:41 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 07:53:41 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 07:53:42 INFO Utils: Successfully started service 'sparkDriver' on port 40802.
+23/12/13 07:53:42 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 07:53:42 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 07:53:42 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 07:53:42 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 07:53:42 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-520abb3f-7a2d-4d1e-8ea2-115c04e18d2e
+23/12/13 07:53:42 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 07:53:42 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 07:53:42 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 07:53:42 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 07:53:43 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 07:53:43 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33543.
+23/12/13 07:53:43 INFO NettyBlockTransferService: Server created on c0753:33543
+23/12/13 07:53:43 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 07:53:43 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 33543, None)
+23/12/13 07:53:43 INFO BlockManagerMasterEndpoint: Registering block manager c0753:33543 with 413.9 MB RAM, BlockManagerId(driver, c0753, 33543, None)
+23/12/13 07:53:43 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 33543, None)
+23/12/13 07:53:43 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 33543, None)
+23/12/13 07:55:42 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 07:55:42 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+23/12/13 07:58:29 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 07:58:32 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 07:58:32 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 07:58:32 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 07:58:32 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 07:58:32 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 07:58:32 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 07:58:32 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 07:58:33 INFO Utils: Successfully started service 'sparkDriver' on port 46253.
+23/12/13 07:58:33 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 07:58:33 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 07:58:33 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 07:58:33 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 07:58:33 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-8a41aca4-1d00-4382-b8d2-0582df4152ac
+23/12/13 07:58:33 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 07:58:33 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 07:58:33 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 07:58:33 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 07:58:33 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 07:58:33 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44358.
+23/12/13 07:58:33 INFO NettyBlockTransferService: Server created on c0753:44358
+23/12/13 07:58:33 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 07:58:33 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 44358, None)
+23/12/13 07:58:33 INFO BlockManagerMasterEndpoint: Registering block manager c0753:44358 with 413.9 MB RAM, BlockManagerId(driver, c0753, 44358, None)
+23/12/13 07:58:33 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 44358, None)
+23/12/13 07:58:33 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 44358, None)
+23/12/13 08:00:32 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 08:00:32 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+23/12/13 08:03:18 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 08:03:21 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 08:03:21 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 08:03:21 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 08:03:21 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 08:03:21 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 08:03:21 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 08:03:21 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 08:03:22 INFO Utils: Successfully started service 'sparkDriver' on port 34221.
+23/12/13 08:03:22 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 08:03:22 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 08:03:22 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 08:03:22 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 08:03:22 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-0debc989-4eb1-4040-9532-54979852708b
+23/12/13 08:03:22 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 08:03:22 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 08:03:22 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 08:03:22 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 08:03:23 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 08:03:23 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 46282.
+23/12/13 08:03:23 INFO NettyBlockTransferService: Server created on c0753:46282
+23/12/13 08:03:23 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 08:03:23 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 46282, None)
+23/12/13 08:03:23 INFO BlockManagerMasterEndpoint: Registering block manager c0753:46282 with 413.9 MB RAM, BlockManagerId(driver, c0753, 46282, None)
+23/12/13 08:03:23 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 46282, None)
+23/12/13 08:03:23 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 46282, None)
+23/12/13 08:05:23 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 08:05:23 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+23/12/13 08:08:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 08:08:16 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 08:08:16 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 08:08:16 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 08:08:16 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 08:08:16 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 08:08:16 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 08:08:16 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 08:08:17 INFO Utils: Successfully started service 'sparkDriver' on port 37447.
+23/12/13 08:08:17 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 08:08:17 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 08:08:17 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 08:08:17 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 08:08:17 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-a8ecacad-ab2c-4218-8b64-4c0a9f0d5ef5
+23/12/13 08:08:17 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 08:08:17 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 08:08:17 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 08:08:17 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 08:08:18 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 08:08:18 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36645.
+23/12/13 08:08:18 INFO NettyBlockTransferService: Server created on c0753:36645
+23/12/13 08:08:18 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 08:08:18 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 36645, None)
+23/12/13 08:08:18 INFO BlockManagerMasterEndpoint: Registering block manager c0753:36645 with 413.9 MB RAM, BlockManagerId(driver, c0753, 36645, None)
+23/12/13 08:08:18 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 36645, None)
+23/12/13 08:08:18 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 36645, None)
+23/12/13 08:10:19 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 08:10:19 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+23/12/13 08:15:02 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 08:15:06 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 08:15:06 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 08:15:06 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 08:15:06 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 08:15:06 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 08:15:06 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 08:15:06 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 08:15:06 INFO Utils: Successfully started service 'sparkDriver' on port 46017.
+23/12/13 08:15:06 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 08:15:06 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 08:15:06 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 08:15:06 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 08:15:06 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-70e9a78c-6b47-4624-b72a-7de3e360ab67
+23/12/13 08:15:06 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 08:15:06 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 08:15:06 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 08:15:07 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 08:15:07 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 08:15:07 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 41539.
+23/12/13 08:15:07 INFO NettyBlockTransferService: Server created on c0753:41539
+23/12/13 08:15:07 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 08:15:07 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 41539, None)
+23/12/13 08:15:07 INFO BlockManagerMasterEndpoint: Registering block manager c0753:41539 with 413.9 MB RAM, BlockManagerId(driver, c0753, 41539, None)
+23/12/13 08:15:07 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 41539, None)
+23/12/13 08:15:07 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 41539, None)
+23/12/13 08:17:06 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 08:17:06 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+23/12/13 08:21:14 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 08:21:17 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 08:21:17 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 08:21:17 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 08:21:17 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 08:21:17 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 08:21:17 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 08:21:17 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 08:21:17 INFO Utils: Successfully started service 'sparkDriver' on port 36794.
+23/12/13 08:21:17 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 08:21:17 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 08:21:17 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 08:21:17 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 08:21:17 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-b43137e9-fa71-4582-b972-101a2132acfc
+23/12/13 08:21:17 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 08:21:17 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 08:21:18 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 08:21:18 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 08:21:18 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 08:21:18 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35895.
+23/12/13 08:21:18 INFO NettyBlockTransferService: Server created on c0753:35895
+23/12/13 08:21:18 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 08:21:18 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 35895, None)
+23/12/13 08:21:18 INFO BlockManagerMasterEndpoint: Registering block manager c0753:35895 with 413.9 MB RAM, BlockManagerId(driver, c0753, 35895, None)
+23/12/13 08:21:18 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 35895, None)
+23/12/13 08:21:18 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 35895, None)
+23/12/13 08:23:25 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 08:23:25 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+23/12/13 08:26:08 WARN BlockManager: Asked to remove block broadcast_118_piece0, which does not exist
+23/12/13 08:26:41 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 08:26:44 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 08:26:44 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 08:26:44 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 08:26:44 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 08:26:44 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 08:26:44 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 08:26:44 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 08:26:45 INFO Utils: Successfully started service 'sparkDriver' on port 32923.
+23/12/13 08:26:45 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 08:26:45 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 08:26:45 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 08:26:45 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 08:26:45 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-027524b7-8094-4778-82cc-4bf833675887
+23/12/13 08:26:45 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 08:26:45 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 08:26:45 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 08:26:45 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 08:26:45 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 08:26:46 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39302.
+23/12/13 08:26:46 INFO NettyBlockTransferService: Server created on c0753:39302
+23/12/13 08:26:46 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 08:26:46 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 39302, None)
+23/12/13 08:26:46 INFO BlockManagerMasterEndpoint: Registering block manager c0753:39302 with 413.9 MB RAM, BlockManagerId(driver, c0753, 39302, None)
+23/12/13 08:26:46 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 39302, None)
+23/12/13 08:26:46 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 39302, None)
+23/12/13 08:28:49 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 08:28:49 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+23/12/13 09:20:40 ERROR Utils: Uncaught exception in thread heartbeat-receiver-event-loop-thread
+java.lang.NullPointerException
+	at org.apache.spark.util.CollectionAccumulator.value(AccumulatorV2.scala:479)
+	at org.apache.spark.util.CollectionAccumulator.value(AccumulatorV2.scala:451)
+	at org.apache.spark.scheduler.TaskSchedulerImpl$$anonfun$11$$anonfun$12.apply(TaskSchedulerImpl.scala:594)
+	at org.apache.spark.scheduler.TaskSchedulerImpl$$anonfun$11$$anonfun$12.apply(TaskSchedulerImpl.scala:594)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:891)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1334)
+	at scala.collection.IterableLike$class.foreach(IterableLike.scala:72)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:54)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+	at org.apache.spark.scheduler.TaskSchedulerImpl$$anonfun$11.apply(TaskSchedulerImpl.scala:594)
+	at org.apache.spark.scheduler.TaskSchedulerImpl$$anonfun$11.apply(TaskSchedulerImpl.scala:593)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.IndexedSeqOptimized$class.foreach(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:186)
+	at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241)
+	at scala.collection.mutable.ArrayOps$ofRef.flatMap(ArrayOps.scala:186)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.executorHeartbeatReceived(TaskSchedulerImpl.scala:593)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$receiveAndReply$1$$anon$2$$anonfun$run$2.apply$mcV$sp(HeartbeatReceiver.scala:128)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1340)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$receiveAndReply$1$$anon$2.run(HeartbeatReceiver.scala:127)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+23/12/13 09:20:50 WARN Executor: Issue communicating with driver in heartbeater
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [10000 milliseconds]. This timeout is controlled by spark.executor.heartbeatInterval
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:47)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:62)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:58)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:92)
+	at org.apache.spark.executor.Executor.org$apache$spark$executor$Executor$$reportHeartBeat(Executor.scala:846)
+	at org.apache.spark.executor.Executor$$anon$2$$anonfun$run$1.apply$mcV$sp(Executor.scala:875)
+	at org.apache.spark.executor.Executor$$anon$2$$anonfun$run$1.apply(Executor.scala:875)
+	at org.apache.spark.executor.Executor$$anon$2$$anonfun$run$1.apply(Executor.scala:875)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1945)
+	at org.apache.spark.executor.Executor$$anon$2.run(Executor.scala:875)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [10000 milliseconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:223)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:227)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:220)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+23/12/13 09:44:20 ERROR Utils: Uncaught exception in thread heartbeat-receiver-event-loop-thread
+java.lang.NullPointerException
+	at org.apache.spark.util.CollectionAccumulator.value(AccumulatorV2.scala:479)
+	at org.apache.spark.util.CollectionAccumulator.value(AccumulatorV2.scala:451)
+	at org.apache.spark.scheduler.TaskSchedulerImpl$$anonfun$11$$anonfun$12.apply(TaskSchedulerImpl.scala:594)
+	at org.apache.spark.scheduler.TaskSchedulerImpl$$anonfun$11$$anonfun$12.apply(TaskSchedulerImpl.scala:594)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:891)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1334)
+	at scala.collection.IterableLike$class.foreach(IterableLike.scala:72)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:54)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+	at org.apache.spark.scheduler.TaskSchedulerImpl$$anonfun$11.apply(TaskSchedulerImpl.scala:594)
+	at org.apache.spark.scheduler.TaskSchedulerImpl$$anonfun$11.apply(TaskSchedulerImpl.scala:593)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.IndexedSeqOptimized$class.foreach(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:186)
+	at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241)
+	at scala.collection.mutable.ArrayOps$ofRef.flatMap(ArrayOps.scala:186)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.executorHeartbeatReceived(TaskSchedulerImpl.scala:593)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$receiveAndReply$1$$anon$2$$anonfun$run$2.apply$mcV$sp(HeartbeatReceiver.scala:128)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1340)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$receiveAndReply$1$$anon$2.run(HeartbeatReceiver.scala:127)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+23/12/13 09:44:30 WARN Executor: Issue communicating with driver in heartbeater
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [10000 milliseconds]. This timeout is controlled by spark.executor.heartbeatInterval
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:47)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:62)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:58)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:92)
+	at org.apache.spark.executor.Executor.org$apache$spark$executor$Executor$$reportHeartBeat(Executor.scala:846)
+	at org.apache.spark.executor.Executor$$anon$2$$anonfun$run$1.apply$mcV$sp(Executor.scala:875)
+	at org.apache.spark.executor.Executor$$anon$2$$anonfun$run$1.apply(Executor.scala:875)
+	at org.apache.spark.executor.Executor$$anon$2$$anonfun$run$1.apply(Executor.scala:875)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1945)
+	at org.apache.spark.executor.Executor$$anon$2.run(Executor.scala:875)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [10000 milliseconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:223)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:227)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:220)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+23/12/13 10:30:10 ERROR Utils: Uncaught exception in thread heartbeat-receiver-event-loop-thread
+java.lang.NullPointerException
+	at org.apache.spark.util.CollectionAccumulator.value(AccumulatorV2.scala:479)
+	at org.apache.spark.util.CollectionAccumulator.value(AccumulatorV2.scala:451)
+	at org.apache.spark.scheduler.TaskSchedulerImpl$$anonfun$11$$anonfun$12.apply(TaskSchedulerImpl.scala:594)
+	at org.apache.spark.scheduler.TaskSchedulerImpl$$anonfun$11$$anonfun$12.apply(TaskSchedulerImpl.scala:594)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:891)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1334)
+	at scala.collection.IterableLike$class.foreach(IterableLike.scala:72)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:54)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+	at org.apache.spark.scheduler.TaskSchedulerImpl$$anonfun$11.apply(TaskSchedulerImpl.scala:594)
+	at org.apache.spark.scheduler.TaskSchedulerImpl$$anonfun$11.apply(TaskSchedulerImpl.scala:593)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.IndexedSeqOptimized$class.foreach(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:186)
+	at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241)
+	at scala.collection.mutable.ArrayOps$ofRef.flatMap(ArrayOps.scala:186)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.executorHeartbeatReceived(TaskSchedulerImpl.scala:593)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$receiveAndReply$1$$anon$2$$anonfun$run$2.apply$mcV$sp(HeartbeatReceiver.scala:128)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1340)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$receiveAndReply$1$$anon$2.run(HeartbeatReceiver.scala:127)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+23/12/13 10:30:20 WARN Executor: Issue communicating with driver in heartbeater
+org.apache.spark.rpc.RpcTimeoutException: Cannot receive any reply from c0753:32923 in 10000 milliseconds. This timeout is controlled by spark.executor.heartbeatInterval
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:47)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:62)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:58)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at scala.util.Failure$$anonfun$recover$1.apply(Try.scala:216)
+	at scala.util.Try$.apply(Try.scala:192)
+	at scala.util.Failure.recover(Try.scala:216)
+	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:326)
+	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:326)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:36)
+	at org.spark_project.guava.util.concurrent.MoreExecutors$SameThreadExecutorService.execute(MoreExecutors.java:293)
+	at scala.concurrent.impl.ExecutionContextImpl$$anon$1.execute(ExecutionContextImpl.scala:136)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:44)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:252)
+	at scala.concurrent.Promise$class.complete(Promise.scala:55)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:157)
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:237)
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:237)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:36)
+	at scala.concurrent.BatchingExecutor$Batch$$anonfun$run$1.processBatch$1(BatchingExecutor.scala:63)
+	at scala.concurrent.BatchingExecutor$Batch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:78)
+	at scala.concurrent.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:55)
+	at scala.concurrent.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:55)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
+	at scala.concurrent.BatchingExecutor$Batch.run(BatchingExecutor.scala:54)
+	at scala.concurrent.Future$InternalCallbackExecutor$.unbatchedExecute(Future.scala:601)
+	at scala.concurrent.BatchingExecutor$class.execute(BatchingExecutor.scala:106)
+	at scala.concurrent.Future$InternalCallbackExecutor$.execute(Future.scala:599)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:44)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:252)
+	at scala.concurrent.Promise$class.tryFailure(Promise.scala:112)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryFailure(Promise.scala:157)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.org$apache$spark$rpc$netty$NettyRpcEnv$$onFailure$1(NettyRpcEnv.scala:206)
+	at org.apache.spark.rpc.netty.NettyRpcEnv$$anon$1.run(NettyRpcEnv.scala:243)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.TimeoutException: Cannot receive any reply from c0753:32923 in 10000 milliseconds
+	... 8 more
+23/12/13 10:39:31 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 10:39:35 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 10:39:35 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 10:39:35 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 10:39:35 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 10:39:35 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 10:39:35 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 10:39:35 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 10:39:35 INFO Utils: Successfully started service 'sparkDriver' on port 40437.
+23/12/13 10:39:35 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 10:39:35 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 10:39:35 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 10:39:35 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 10:39:35 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-f3955d24-f7f0-47e0-984b-e3e6c5d6cb1f
+23/12/13 10:39:35 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 10:39:35 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 10:39:36 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 10:39:36 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 10:39:36 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 10:39:36 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44523.
+23/12/13 10:39:36 INFO NettyBlockTransferService: Server created on c0753:44523
+23/12/13 10:39:36 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 10:39:36 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 44523, None)
+23/12/13 10:39:36 INFO BlockManagerMasterEndpoint: Registering block manager c0753:44523 with 413.9 MB RAM, BlockManagerId(driver, c0753, 44523, None)
+23/12/13 10:39:36 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 44523, None)
+23/12/13 10:39:36 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 44523, None)
+23/12/13 10:41:36 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 10:41:36 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+23/12/13 12:58:32 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 12:58:35 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 12:58:35 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 12:58:35 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 12:58:35 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 12:58:35 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 12:58:35 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 12:58:35 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 12:58:36 INFO Utils: Successfully started service 'sparkDriver' on port 46114.
+23/12/13 12:58:36 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 12:58:36 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 12:58:36 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 12:58:36 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 12:58:36 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-f4694cfa-74e5-45e4-bfa1-9a1c7ba68e64
+23/12/13 12:58:36 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 12:58:36 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 12:58:36 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 12:58:36 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 12:58:36 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 12:58:36 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34776.
+23/12/13 12:58:36 INFO NettyBlockTransferService: Server created on c0753:34776
+23/12/13 12:58:36 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 12:58:36 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 34776, None)
+23/12/13 12:58:36 INFO BlockManagerMasterEndpoint: Registering block manager c0753:34776 with 413.9 MB RAM, BlockManagerId(driver, c0753, 34776, None)
+23/12/13 12:58:36 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 34776, None)
+23/12/13 12:58:36 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 34776, None)
+23/12/13 13:00:38 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 13:00:38 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+23/12/13 15:02:19 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 15:02:23 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 15:02:23 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 15:02:23 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 15:02:23 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 15:02:23 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 15:02:23 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 15:02:23 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 15:02:23 INFO Utils: Successfully started service 'sparkDriver' on port 39370.
+23/12/13 15:02:23 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 15:02:23 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 15:02:23 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 15:02:23 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 15:02:23 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-be60f0d2-bbb0-4815-9e5e-e39a1ddbb008
+23/12/13 15:02:23 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 15:02:23 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 15:02:24 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 15:02:24 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 15:02:24 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 15:02:24 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 41301.
+23/12/13 15:02:24 INFO NettyBlockTransferService: Server created on c0753:41301
+23/12/13 15:02:24 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 15:02:24 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 41301, None)
+23/12/13 15:02:24 INFO BlockManagerMasterEndpoint: Registering block manager c0753:41301 with 413.9 MB RAM, BlockManagerId(driver, c0753, 41301, None)
+23/12/13 15:02:24 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 41301, None)
+23/12/13 15:02:24 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 41301, None)
+23/12/13 15:04:26 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 15:04:26 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+23/12/13 15:09:28 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/12/13 15:09:31 INFO SparkContext: Running Spark version 2.4.5
+23/12/13 15:09:31 INFO SparkContext: Submitted application: Model Validation Airplane Departure Prediction
+23/12/13 15:09:31 INFO SecurityManager: Changing view acls to: augenbraun.n
+23/12/13 15:09:31 INFO SecurityManager: Changing modify acls to: augenbraun.n
+23/12/13 15:09:31 INFO SecurityManager: Changing view acls groups to: 
+23/12/13 15:09:31 INFO SecurityManager: Changing modify acls groups to: 
+23/12/13 15:09:31 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(augenbraun.n); groups with view permissions: Set(); users  with modify permissions: Set(augenbraun.n); groups with modify permissions: Set()
+23/12/13 15:09:32 INFO Utils: Successfully started service 'sparkDriver' on port 35407.
+23/12/13 15:09:32 INFO SparkEnv: Registering MapOutputTracker
+23/12/13 15:09:32 INFO SparkEnv: Registering BlockManagerMaster
+23/12/13 15:09:32 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/13 15:09:32 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/13 15:09:32 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-70acfd14-1e53-4714-88ec-50bba869fde2
+23/12/13 15:09:32 INFO MemoryStore: MemoryStore started with capacity 413.9 MB
+23/12/13 15:09:32 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/13 15:09:32 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/13 15:09:33 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://c0753:4040
+23/12/13 15:09:33 INFO Executor: Starting executor ID driver on host localhost
+23/12/13 15:09:33 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43459.
+23/12/13 15:09:33 INFO NettyBlockTransferService: Server created on c0753:43459
+23/12/13 15:09:33 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/13 15:09:33 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c0753, 43459, None)
+23/12/13 15:09:33 INFO BlockManagerMasterEndpoint: Registering block manager c0753:43459 with 413.9 MB RAM, BlockManagerId(driver, c0753, 43459, None)
+23/12/13 15:09:33 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c0753, 43459, None)
+23/12/13 15:09:33 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c0753, 43459, None)
+23/12/13 15:11:36 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+23/12/13 15:11:36 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
